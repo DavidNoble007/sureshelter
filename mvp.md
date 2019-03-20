@@ -96,7 +96,7 @@ sureShelter
 ### RSuite React CSS / NEW /
     CSS framework used to build the application
 
-### Email Webhooks / NEW /
+### PHP / NEW /
     A notification is sent to a specified email when companies sign up for donations.
 
 ### Mongo/Mongoose for DB
