@@ -1,0 +1,24 @@
+{
+  "name": "shelterfind",
+  "version": "1.0.0",
+  "description": "### Authors     David Noble     Amy Smith     Yasiin Muhammad     Clarissa Rivas",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidNoble007/shelterfind.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DavidNoble007/shelterfind/issues"
+  },
+  "homepage": "https://github.com/DavidNoble007/shelterfind#readme",
+  "dependencies": {
+    
+  }
+}
