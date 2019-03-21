@@ -9,8 +9,16 @@ class App extends Component {
       <div className="App">
       <Navbar />
       <br></br>
-      <CardBody />
+     
       </div>
+    );
+  }
+
+  render(){
+    return(
+    
+    <CardBody />
+   
     );
   }
 
