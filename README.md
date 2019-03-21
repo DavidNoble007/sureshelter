@@ -1,7 +1,7 @@
 # Sure Shelter
 
 ## Application Functionality
-    Sure Shelter is a web-based application allowing users to search for Homeless Shelters in their area, as well as allowing companies to sign up to donate goods or services.
+Sure Shelter is a web-based application allowing users to search for Homeless Shelters in their area, as well as allowing companies to sign up to donate goods or services.
 
 ## Tech
     React
