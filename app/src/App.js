@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-// import AppBar from "./components/Nav";
+
 import CarouselBody from "./components/Carousel";
 
 
@@ -11,7 +11,7 @@ class App extends Component {
   
     return (
       <div className="App">
-      {/* <AppBar /> */}
+     
       <CarouselBody />
 
       </div>

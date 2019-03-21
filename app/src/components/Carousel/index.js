@@ -10,7 +10,7 @@ return (
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=First slide&bg=373940"
+      src="https://s3-ap-southeast-2.amazonaws.com/arc-vaada/wp-content/uploads/2019/02/21154909/12927-homelessness-is-not-what-0.jpg"
       alt="First slide"
     />
     <Carousel.Caption>
@@ -21,7 +21,7 @@ return (
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=Second slide&bg=282c34"
+      src="http://nightlightcanada.com/wp-content/uploads/2015/10/homeless-.jpg"
       alt="Third slide"
     />
 
@@ -33,7 +33,7 @@ return (
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src="holder.js/800x400?text=Third slide&bg=20232a"
+      src="http://olympiawa.gov/~/media/Images/CPD/Homelessness/homelessness-header.jpg?la=en"
       alt="Third slide"
     />
 
