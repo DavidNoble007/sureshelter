@@ -22,7 +22,7 @@ app.use(require("morgan")("dev"));
 // Serve Static
 app.use(express.static("app/build"));
 
-app.use(require("./routes"));
+app.use(require("./routes/login-signup/index"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
