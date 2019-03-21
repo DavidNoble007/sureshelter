@@ -14,12 +14,19 @@ const styles = {
     flexGrow: 1,
   },
   grow: {
-    flexGrow: 1,
+    // flexGrow: -10,
+    marginRight: 50,
+    
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+    marginLeft: 230,
+    // marginRight: ,
   },
+  navButton: {
+    padding:'0 20px',
+    marginLeft: 100,
+  },
+
 };
 
 function ButtonAppBar(props) {
@@ -28,13 +35,17 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+        <Typography variant="h3" color="inherit" className={classes.grow}>
+            SureShelter
+          </Typography>
+          
+        <Button className={classes.navButton} color="inherit">Services</Button>
+        <Button className={classes.navButton} color="inherit">Donate</Button>
+        <Button className={classes.navButton}color="inherit">Login</Button>
+        <Button className={classes.navButton}color="inherit">Volunteer</Button>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </div>
