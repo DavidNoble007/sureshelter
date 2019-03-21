@@ -17,8 +17,8 @@ const styles = {
     flexGrow: 1,
   },
   menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
+    marginLeft: 1070,
+    
   },
 };
 
@@ -28,18 +28,18 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+        <Button color="inherit">Login</Button>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
+       
+          
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
 
 ButtonAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
