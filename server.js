@@ -6,6 +6,10 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 
+// * Node Mailer
+const nodemailer = require("nodemailer");
+
+
 // Passport configuration
 // const passport = require("passport");
 require("./services/passport");
@@ -22,7 +26,7 @@ app.use(require("morgan")("dev"));
 // Serve Static
 app.use(express.static("app/build"));
 
-app.use(require("./routes"));
+app.use(require("./routes/login-signup/index"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/app/build/index.html"));

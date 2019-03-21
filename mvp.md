@@ -16,61 +16,17 @@ sureShelter
 │   server.js
 │   .gitignore
 │    
-└─── routes
-│    
+└─── app
+│ 
 └─── models
 │    
+└───node_modules
+│    
+└─── routes
+│    
 └─── services
-│    └─── passport.js
-│
-└─── app
-    └─── components
-        └─── mission
-        │   │   index.js
-        │   │
-        │   └─── sureShelter
-        │       │   ...
-        │       │  
-        │   
-        └─── services
-        │   │   ...
-        │   │
-        │   └─── searchShelters
-        │       │   ...
-        │       │
-        │        searchVolunteer 
-        │       │   file111.txt
-        │       │   file112.txt
-        │       │   ...
-        │   
-        └─── helpOthers
-        │   │   file011.txt
-        │   │   file012.txt
-        │   │
-        │   └─── volunteerOrgn
-        │       │   file111.txt
-        │       │   file112.txt
-        │       │   ...
-        │       │
-        │        donateOrgn 
-        │       │   file111.txt
-        │       │   file112.txt
-        │       │   ...
-        │   
-        └─── signUpLogin
-        │   │   file011.txt
-        │   │   file012.txt
-        │   │
-        │   └─── signUp
-        │       │   file111.txt
-        │       │   file112.txt
-        │       │   ...
-        │       │
-        │        login
-        │       │   file111.txt
-        │       │   file112.txt
-        │       │   ...
-
+│    
+ 
 ```
 
 
@@ -93,10 +49,10 @@ sureShelter
     Utilizing the Bing API to allow users to search for Homeless Shelters in their area.
 
 
-### RSuite React CSS / NEW /
+### ReactStrap / NEW /
     CSS framework used to build the application
 
-### PHP / NEW /
+### nodeMailer / NEW /
     A notification is sent to a specified email when companies sign up for donations.
 
 ### Mongo/Mongoose for DB
