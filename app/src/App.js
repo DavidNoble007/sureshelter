@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from "./components/Nav";
-import CardBody from "./components/Card";
+import CarouselBody from "./components/Card";
 class App extends Component {
   
   render() {
