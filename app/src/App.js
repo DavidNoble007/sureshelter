@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import AppBar from "./components/Nav";
-import AutoPlaySwipeableViews from "./components/Carousel";
+// import AppBar from "./components/Nav";
+import CarouselBody from "./components/Carousel";
+
 
 
 class App extends Component {
@@ -10,22 +11,12 @@ class App extends Component {
   
     return (
       <div className="App">
-      <AppBar />
-       
-      </div>
-    );
-  }
+      {/* <AppBar /> */}
+      <CarouselBody />
 
-  render() {
-  
-    return (
-      <div className="App">
-      <AutoPlaySwipeableViews />
-       
       </div>
     );
   }
-  
 }
 
 export default App;
