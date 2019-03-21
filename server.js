@@ -6,6 +6,10 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 
+// * Node Mailer
+const nodemailer = require("nodemailer");
+
+
 // Passport configuration
 // const passport = require("passport");
 require("./services/passport");

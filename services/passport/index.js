@@ -5,10 +5,10 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const LocalStrategy = require("passport-local");
 
 // Import our User Mongoose Model
-const User = require("../models").User;
+const User = require("../../models").User;
 
 // Import our config file
-const config = require("../config");
+const config = require("../../config");
 
 // Setup options for Local Strategy
 const localOptions = {

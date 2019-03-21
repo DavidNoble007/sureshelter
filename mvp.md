@@ -49,7 +49,7 @@ sureShelter
     Utilizing the Bing API to allow users to search for Homeless Shelters in their area.
 
 
-### RSuite React CSS / NEW /
+### ReactStrap / NEW /
     CSS framework used to build the application
 
 ### nodeMailer / NEW /
