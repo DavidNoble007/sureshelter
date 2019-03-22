@@ -1,9 +1,7 @@
 import React from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
-// import Form from "react-bootstrap/Form";
-// import FormControl from "react-bootstrap/Form";
+import { Navbar, Nav} from "react-bootstrap";
+//* Excluding Button, Form & FormControl to prevent errors */
+// import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function ButtonAppBar(props) {
@@ -28,11 +26,11 @@ function ButtonAppBar(props) {
 
         <Nav className="mr">
         <Link to="/sign-up">
-            <Button onClick={props.signUpModal}>Sign Up</Button>
+            Sign Up
           </Link>
 
           <Link to="/login">
-            <Button onClick={props.loginModal}>Login</Button>
+            Login
           </Link></Nav>
       </Navbar>
     </div>

@@ -3,7 +3,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import CardBody from '../components/Card/index';
 import Col from 'react-bootstrap/Col'
-import Jumbotron from "../components/Jumbotron";
+// import Jumbotron from "../components/Jumbotron";
+
 function Volunteer() {
   return (
     <div>

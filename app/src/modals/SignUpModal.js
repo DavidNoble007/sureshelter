@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import Modal from "./Modal";
-import { Card, CardHeader, CardContent, CardHeaderTitle } from "bloomer";
+import { Card, CardHeader, CardContent, CardHeaderTitle } from "react-bootstrap";
 import { signup } from "../../state/auth/actions";
 
 function SignUpModal(props) {
