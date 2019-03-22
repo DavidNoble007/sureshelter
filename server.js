@@ -6,17 +6,13 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 
-// * Node Mailer
-const nodemailer = require("nodemailer");
-
-
 // Passport configuration
 // const passport = require("passport");
 require("./services/passport");
 
 // Mongoose Connection
 const db = require("./config/connection");
-db(process.env.MONGODB_URI || "mongodb://localhost/test");
+db(process.env.MONGODB_URI || "mongodb://localhost/sureshelter");
 
 // Express Middleware
 app.use(express.json());
