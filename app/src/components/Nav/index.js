@@ -26,12 +26,14 @@ function ButtonAppBar(props) {
           </Link>
         </Nav>
 
-        <Button onClick={props.signUpModal}>
-          <strong>Sign up</strong>
-        </Button>
-        <Button onClick={props.loginModal}>
-          Log in
-        </Button>
+        <Nav className="mr">
+        <Link to="/sign-up">
+            <Button onClick={props.signUpModal}>Sign Up</Button>
+          </Link>
+
+          <Link to="/login">
+            <Button onClick={props.loginModal}>Login</Button>
+          </Link></Nav>
       </Navbar>
     </div>
   );
