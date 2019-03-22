@@ -1,5 +1,5 @@
 // import React from "react";
-// import Jumbotron from 'react-bootstrap/Jumbotron';
+// import Jumbotron from 'react-bootstrap';
 // function Jumbotron({ children }) {
 //   return (
 //     <div
