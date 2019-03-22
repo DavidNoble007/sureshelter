@@ -1,43 +1,35 @@
-import { React, Component } from "react";
+import React, { Component } from "react";
+import { ReactBingmaps } from "react-bingmaps";
+import "./style.css";
+import axios from "axios";
 
+var zipcode = 85048;
+class Map extends Component {
 
+    handleFormSubmit = () => {
+        axios.get("https://dev.virtualearth.net/REST/v1/LocalSearch/?query=homelessshelter=" + zipcode + "&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8")
+            .then(res => {
 
-class Map extends Component(props) {
+                // add axios for lat long using zip
+                console.log(res)
 
-    handleFormSubmit() {
-        // api bing zip search
-        // then update map
+            }).catch(e => console.log(e))
     }
+
     componentDidMount() {
-        var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
-        var location = new Microsoft.Maps.Location(35.0278, -111.0222);
-        var pushpin = new Microsoft.Maps.Pushpin(location, { color: 'green' });
-        var zipLocation;
-
-        //push the pin onto the map
-        map.entities.push(pushpin);
-
-        //the setView function is a bing maps function for setting the center of the map view
-        map.setView({
-            //changes the type of map
-            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
-            //sets the center
-            center: new Microsoft.Maps.Location(35.027222, -111.0225),
-            //sets the zoom
-            zoom: 15
-        });
 
     }
 
     render() {
-        <div>
-            <div id="myMap"></div>
-            <form>
-                {/* more code */}
-                <button onClick={()=>handleFormSubmit()}></button>
-            </form>
-            {/* everything else: form (zip), table, etc. */}
-        </div>
+        return (
+            <div>
+                <ReactBingmaps className="searchmap" bingmapKey="AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"></ReactBingmaps>
+                <br></br>
+                <input type="text" name="zipcodesearch"></input><br></br>
+                <button onClick={() => this.handleFormSubmit()}>Search by Zip Code</button>
+                {/* everything else: table, etc. */}
+            </div>
+        )
     }
 };
 

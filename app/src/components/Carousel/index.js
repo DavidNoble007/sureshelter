@@ -1,11 +1,13 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel"
 import Container from "react-bootstrap/Container";
+import Map from "../Map/map";
 
 
 function CarouselBody(props){
 const { classes } = props;
 return (
+  <div>
 <Container className={classes}>
 <Carousel>
   <Carousel.Item>
@@ -45,6 +47,8 @@ return (
   </Carousel.Item>
 </Carousel>
 </Container>
+<Map></Map>
+</div>
 
 );
 
