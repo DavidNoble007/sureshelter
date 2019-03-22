@@ -1,11 +1,12 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel"
+import Container from "react-bootstrap/Container";
 
 
 function CarouselBody(props){
 const { classes } = props;
 return (
-<div className={classes}>
+<Container className={classes}>
 <Carousel>
   <Carousel.Item>
     <img
@@ -43,7 +44,10 @@ return (
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
-</div>
+</Container>
+
 );
+
+
 };
 export default CarouselBody;
