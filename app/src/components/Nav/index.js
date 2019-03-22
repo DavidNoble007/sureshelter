@@ -11,23 +11,23 @@ function ButtonAppBar(props) {
   return (
     <div className={classes}>
       <Navbar bg="dark" variant="dark"><img
-        src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"
+        src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"src="holder.js/100px180"
         width="30"
         height="30"
         className="d-inline-block align-top"
       />
-        <Navbar.Brand href="#home">SURESHELTER</Navbar.Brand>
+        <Navbar.Brand href="">SURESHELTER</Navbar.Brand>
         <Nav className="mr-auto">
           <Link to="/">
-            <Nav.Link href="#pricing">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </Link>
 
           <Link to="/volunteer">
-            <Nav.Link href="#pricing">Volunteer</Nav.Link>
+            <Nav.Link href="/volunteer">Volunteer</Nav.Link>
           </Link>
 
           <Link to="/donate">
-            <Nav.Link href="#pricing">Donations</Nav.Link>
+            <Nav.Link href="/donate">Donations</Nav.Link>
           </Link>
         </Nav>
         <Form inline>
