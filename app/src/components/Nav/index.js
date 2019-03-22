@@ -11,10 +11,11 @@ function ButtonAppBar(props) {
   return (
     <div className={classes}>
       <Navbar bg="dark" variant="dark"><img
-        src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"src="holder.js/100px180"
+        src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"
         width="30"
         height="30"
         className="d-inline-block align-top"
+        alt="React Bootstrap logo"
       />
         <Navbar.Brand href="">SURESHELTER</Navbar.Brand>
         <Nav className="mr-auto">
