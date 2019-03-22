@@ -11,10 +11,10 @@ function ButtonAppBar(props) {
   return (
     <div className={classes}>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">SureShelter</Navbar.Brand>
+        <Navbar.Brand href="/">SureShelter</Navbar.Brand>
         <Nav className="mr-auto">
           <Link to="/">
-            <Nav.Link href="#pricing">Home</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
           </Link>
 
           <Link to="/volunteer">
