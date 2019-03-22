@@ -6,8 +6,8 @@ import Modal from "./Modal";
 import { Card, CardHeader, CardContent, CardHeaderTitle } from "bloomer";
 
 function LoginModal(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("tucker@gmail.com");
+  const [password, setPassword] = useState("kittens");
 
   return (
     <Modal>

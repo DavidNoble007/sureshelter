@@ -6,7 +6,8 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 
-// * Node Mailer
+// !! Node Mailer
+// -- Amy
 const nodemailer = require("nodemailer");
 
 

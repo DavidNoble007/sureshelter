@@ -1,9 +1,7 @@
 import React from "react";
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/Form';
+import { Navbar, Nav} from "react-bootstrap";
+//* Excluding Button, Form & FormControl to prevent errors */
+// import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function ButtonAppBar(props) {
@@ -11,29 +9,32 @@ function ButtonAppBar(props) {
   return (
     <div className={classes}>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">SureShelter</Navbar.Brand>
+        <Navbar.Brand href="/">SureShelter</Navbar.Brand>
         <Nav className="mr-auto">
-        <Link to="/">
-          <Nav.Link href="#pricing">Home</Nav.Link>
-        </Link>
+          <Link to="/">
+            <Nav.Link href="/">Home</Nav.Link>
+          </Link>
 
-        <Link to="/volunteer">
-          <Nav.Link href="#pricing">Volunteer</Nav.Link>
-        </Link>
+          <Link to="/volunteer">
+            <Nav.Link href="#pricing">Volunteer</Nav.Link>
+          </Link>
 
-        <Link to="/donate">
-          <Nav.Link href="#pricing">Donations</Nav.Link>
-        </Link>
+          <Link to="/donate">
+            <Nav.Link href="#pricing">Donations</Nav.Link>
+          </Link>
         </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
-        </Form>
+
+        <Nav className="mr">
+        <Link to="/sign-up">
+            Sign Up
+          </Link>
+
+          <Link to="/login">
+            Login
+          </Link></Nav>
       </Navbar>
     </div>
-
   );
 }
-
 
 export default ButtonAppBar;
