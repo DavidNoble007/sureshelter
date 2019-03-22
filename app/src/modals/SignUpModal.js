@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { signin } from "../../state/auth/actions";
-
 import Modal from "./Modal";
-import { Card, CardHeader, CardContent, CardHeaderTitle } from "bloomer";
+import { Card, CardHeader, CardContent, CardHeaderTitle } from "react-bootstrap";
+import { signup } from "../../state/auth/actions";
 
-function LoginModal(props) {
+function SignUpModal(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [rePassword, setRePassword] = useState("");
 
   return (
     <Modal>
       <Card>
         <CardHeader>
-          <CardHeaderTitle>Login!</CardHeaderTitle>
+          <CardHeaderTitle>Create an Account!</CardHeaderTitle>
         </CardHeader>
         <CardContent>
           <div className="field">
@@ -42,12 +42,33 @@ function LoginModal(props) {
               type="password"
             />
           </div>
+          <div className="field">
+            <label className="label" htmlFor="rePassword">
+              Re Enter Password
+            </label>
+            <input
+              placeholder="Gotta Double Dip"
+              className="input"
+              name="rePassword"
+              value={rePassword}
+              onChange={e => setRePassword(e.target.value)}
+              type="password"
+            />
+          </div>
           <div className="has-text-right">
+            <button onClick={props.closeModal} className="button is-primary">
+              Cancel
+            </button>
             <button
-              onClick={() => props.dispatch(signin(email, password))}
+              onClick={() => {
+                if (password === rePassword) {
+                  console.log("Made it");
+                  props.signup(email, password);
+                }
+              }}
               className="button is-primary"
             >
-              Login
+              Sign Up
             </button>
           </div>
         </CardContent>
@@ -56,7 +77,13 @@ function LoginModal(props) {
   );
 }
 
+const mapDispatchToProps = dispatch => ({
+  signup(email, password) {
+    dispatch(signup(email, password))
+  }
+})
+
 export default connect(
   null,
-  null
-)(LoginModal);
+  mapDispatchToProps
+)(SignUpModal);
