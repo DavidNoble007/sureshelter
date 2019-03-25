@@ -21,6 +21,18 @@ router.get("/", function (req, res) {
   res.send("Welcome to the v1 routes!");
 });
 
+router.get("/all-donations", function (req, res) {
+  db.Donation.find().then(dbDonations => {
+    res.json(dbDonations);
+  })
+});
+
+router.post("/create-donations", function (req, res) {
+  db.Donation.create(req.body).then(dbDonations => {
+    res.json(dbDonations);
+  })
+});
+
 router.get("/protected", requireAuth, function(req, res){
   res.send("You have been protected!");
 });
