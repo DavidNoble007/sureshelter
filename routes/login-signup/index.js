@@ -26,6 +26,10 @@ router.get("/all-donations", function (req, res) {
     res.json(dbDonations);
   })
 });
+//gave back an empty array
+
+
+//***** */
 
 router.post("/create-donations", function (req, res) {
   db.Donation.create(req.body).then(dbDonations => {
@@ -33,13 +37,17 @@ router.post("/create-donations", function (req, res) {
   })
 });
 
+///caused an error/
+
 router.get("/protected", requireAuth, function(req, res){
   res.send("You have been protected!");
 });
+//gave back unauthorized
 
 router.post("/signin", requireSignin, function (req, res) {
   res.json({ token: tokenizer(req.user) });
 });
+//no such file or directory exists
 
 router.post("/signup", function (req, res) {
   const { email, password } = req.body;
