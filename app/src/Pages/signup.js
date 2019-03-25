@@ -1,12 +1,9 @@
-import React, { useState } from "react";
-import {
-  Card,
-  CardHeader,
-  CardContent,
-  CardHeaderTitle
-} from "react-bootstrap";
-
-import { Form, Col, Row } from 'react-bootstrap';
+// import React, { useState } from "react";
+// import {
+//   Card
+// } from "react-bootstrap";
+// import { connect } from "react-redux";
+// import { Form, Col, Row } from 'react-bootstrap';
 
 
 // function SignUp(props) {
@@ -16,10 +13,10 @@ import { Form, Col, Row } from 'react-bootstrap';
 
 //   return (
 //     <Card>
-//       <CardHeader>
-//         <CardHeaderTitle>Create an Account!</CardHeaderTitle>
-//       </CardHeader>
-//       <CardContent>
+     
+//        Create an Account!
+  
+     
 //         <div className="field">
 //           <label className="label" htmlFor="email">
 //             Email
@@ -70,7 +67,7 @@ import { Form, Col, Row } from 'react-bootstrap';
 //         >
 //           Sign Up
 //         </button>
-//       </CardContent>
+   
 //     </Card>
 //   );
 // }
@@ -79,19 +76,19 @@ import { Form, Col, Row } from 'react-bootstrap';
 //     null
 //   )(SignUp);
 
-  function SignUp({ children }) {
-    return (
-      <Form>
-    <Row>
-      <Col>
-        <Form.Control placeholder="First name" />
-      </Col>
-      <Col>
-        <Form.Control placeholder="Last name" />
-      </Col>
-    </Row>
-  </Form>
-    );
-  }
+//   // function SignUp({ children }) {
+//   //   return (
+//   //     <Form>
+//   //   <Row>
+//   //     <Col>
+//   //       <Form.Control placeholder="First name" />
+//   //     </Col>
+//   //     <Col>
+//   //       <Form.Control placeholder="Last name" />
+//   //     </Col>
+//   //   </Row>
+//   // </Form>
+//   //   );
+//   // }
   
-  export default SignUp;
+//   // export default SignUp;

@@ -1,17 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { ReactBingmaps } from "react-bingmaps";
 import "./style.css";
 import axios from "axios";
 
-var zipcode = 85048;
+
 class Map extends Component {
-state = {
+
+    state = {
     pushPins:[],
-    center : []
+    center : [],
+    zipcode : ""
 }
     handleFormSubmit = () => {
 
-        axios.get("https://dev.virtualearth.net/REST/v1/Locations/" + zipcode + "?&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8")
+        axios.get("https://dev.virtualearth.net/REST/v1/Locations/" + this.zipcode + "?&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8")
             .then(coordres => {
 
                 console.log(coordres.data.resourceSets[0].resources[0].geocodePoints[0].coordinates);
@@ -45,12 +47,20 @@ state = {
 
     }
 
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+          [name]: value
+        });
+      };
+
     render() {
         return (
             <div>
                 <ReactBingmaps className="searchmap" bingmapKey="AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8" pushPins={this.state.pushPins} center={this.state.center}></ReactBingmaps>
                 <br></br>
-                <input type="text" name="zipcodesearch"></input><br></br>
+                <input type="text" name="zipcodesearch"
+                onChange={this.handleInputChange} value={this.state.zipcodesearch}></input><br></br>
                 <button onClick={() => this.handleFormSubmit()}>Search by Zip Code</button>
                 {/* everything else: table, etc. */}
             </div>
