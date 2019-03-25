@@ -16,7 +16,7 @@ function Donate() {
     }}>
       <Container>
         <Col>
-          <Row><p style={{ fontStyle: "Stencil Std, fantasy", }}>BUILDING A MOVEMENT TO END HOMELESSNESS</p>
+          <Row><h2 style={{ fontStyle: "Stencil Std, fantasy", }}>BUILDING A MOVEMENT TO END HOMELESSNESS</h2>
           <DonateCard />
           <Col>
             <h3>DONATIONS</h3>
