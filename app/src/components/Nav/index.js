@@ -30,9 +30,11 @@ function ButtonAppBar(props) {
           </Link>
         </Nav>
         <Nav className="mr">
-          <Link to="/signup"><Nav.Link href="#signup">Sign Up</Nav.Link></Link>
+          <Link to="/signup">
+          <Nav.Link href="#signup">Sign Up</Nav.Link></Link>
 
-          <Link to="/login"><Nav.Link href="#login">Login</Nav.Link></Link>
+          <Link to="/login">
+          <Nav.Link href="#login">Login</Nav.Link></Link>
         </Nav>
       </Navbar>
     </div>
