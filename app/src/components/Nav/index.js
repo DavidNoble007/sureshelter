@@ -8,13 +8,14 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes}>
-      <Navbar bg="dark" variant="dark"><img
-        src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-      />
+      <Navbar bg="dark" variant="dark">
+        <img
+          src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+          alt="React Bootstrap logo"
+        />
         <Navbar.Brand href="">SURESHELTER</Navbar.Brand>
         <Nav className="mr-auto">
           <Link to="/">
@@ -30,25 +31,10 @@ function ButtonAppBar(props) {
           </Link>
         </Nav>
         <Nav className="mr">
-        <div className="buttons">
-                <Button onClick={props.signUpModal} isColor="primary">
-                  <strong>Sign up</strong>
-                </Button>
-                <Button onClick={props.loginModal} isColor="light">
-                  Log in
-                </Button>
-              </div>
+          <Link to="/signup"><Nav.Link href="#signup">Sign Up</Nav.Link></Link>
 
-{/*      
-        <Link to="/signup">
-            Sign Up
-          </Link>
-
-          <Link to="/signin">
-            Login
-          </Link> */}
-          
-          </Nav>
+          <Link to="/login"><Nav.Link href="#login">Login</Nav.Link></Link>
+        </Nav>
       </Navbar>
     </div>
   );
