@@ -32,9 +32,10 @@ router.get("/all-donations", function (req, res) {
 //***** */
 
 router.post("/create-donations", function (req, res) {
+  console.log(req.body);
   db.Donation.create(req.body).then(dbDonations => {
     res.json(dbDonations);
-  })
+  }).catch(err => res.send(err));
 });
 
 ///caused an error/
