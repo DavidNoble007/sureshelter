@@ -37,8 +37,10 @@ class DonateForm extends Component {
           email: "",
           donationType: "",
           donationAmount: "",
-        });
+        })
+        console.log("made it")
       })
+      
 
 
   };
@@ -78,6 +80,14 @@ class DonateForm extends Component {
             <Form.Label></Form.Label>
             <Form.Control
               value={this.state.donationType} name="donationType"
+              as="textarea"
+              rows="3"
+              onChange={this.handleInputChange} />
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlTextarea1">
+            <Form.Label></Form.Label>
+            <Form.Control
+              value={this.state.donationAmount} name="donationAmount"
               as="textarea"
               rows="3"
               onChange={this.handleInputChange} />
