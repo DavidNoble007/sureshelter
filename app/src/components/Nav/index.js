@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav} from "react-bootstrap";
+import { Navbar, Nav, Form } from "react-bootstrap";
 //* Excluding Button, Form & FormControl to prevent errors */
 // import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -15,8 +15,8 @@ function ButtonAppBar(props) {
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       />
-        <Navbar.Brand href="">SURESHELTER</Navbar.Brand>
-        <Nav className="mr-auto">
+        <Navbar.Brand href="/">SURESHELTER</Navbar.Brand>
+        <Nav className="home">
           <Link to="/">
             <Nav.Link href="/">Home</Nav.Link>
           </Link>
@@ -29,15 +29,16 @@ function ButtonAppBar(props) {
             <Nav.Link href="#pricing">Donations</Nav.Link>
           </Link>
         </Nav>
-
+        <Form inline>
         <Nav className="mr">
-        <Link to="/sign-up">
-            Sign Up
+          <Link to="/sign-up">
+            <Nav.Link href="#sign up">Sign Up</Nav.Link>
           </Link>
 
           <Link to="/login">
-            Login
+            <Nav.Link href="#login">Login</Nav.Link>
           </Link></Nav>
+          </Form>
       </Navbar>
     </div>
   );

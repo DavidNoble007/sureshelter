@@ -3,25 +3,23 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import CardBody from '../components/Card/index';
 import Col from 'react-bootstrap/Col'
+import CardBodyTwo from "../components/Card/CardTwo";
 
 function Volunteer() {
   return (
-    <div>
+   
+    <div style={{backgroundColor: "#3BFBFF", height:960}}>
 <Container>
-        <Row><Col>
-        <h3>Sign up</h3>
-        
-        </Col>
+        <Row>
           <Col>
-            <CardBody />
-          </Col>
-          <Col>       
-           <CardBody />
+            <CardBody />      
+           <CardBodyTwo />
           </Col>    
           </Row>
 
       </Container>
     </div>
+    
 
   );
 }
