@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav} from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 //* Excluding Button, Form & FormControl to prevent errors */
 // import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -29,15 +29,26 @@ function ButtonAppBar(props) {
             <Nav.Link href="#pricing">Donations</Nav.Link>
           </Link>
         </Nav>
-
         <Nav className="mr">
-        <Link to="/sign-up">
+        <div className="buttons">
+                <Button onClick={props.signUpModal} isColor="primary">
+                  <strong>Sign up</strong>
+                </Button>
+                <Button onClick={props.loginModal} isColor="light">
+                  Log in
+                </Button>
+              </div>
+
+{/*      
+        <Link to="/signup">
             Sign Up
           </Link>
 
-          <Link to="/login">
+          <Link to="/signin">
             Login
-          </Link></Nav>
+          </Link> */}
+          
+          </Nav>
       </Navbar>
     </div>
   );

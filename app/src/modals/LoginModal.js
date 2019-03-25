@@ -3,11 +3,11 @@ import { connect } from "react-redux";
 import { signin } from "../../state/auth/actions";
 
 import Modal from "./Modal";
-import { Card, CardHeader, CardContent, CardHeaderTitle } from "bloomer";
+import { Card, CardHeader, CardContent, CardHeaderTitle } from "react-bootstrap";
 
 function LoginModal(props) {
-  const [email, setEmail] = useState("tucker@gmail.com");
-  const [password, setPassword] = useState("kittens");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <Modal>
