@@ -15,14 +15,15 @@ function Donate() {
       height: 960
     }}>
       <Container>
-        <Row><p style={{fontStyle: "Stencil Std, fantasy"}}>BUILDING A MOVEMENT TO END HOMELESSNESS</p></Row>
-        <Row><Col>
+        <Col>
+          <Row><p style={{ fontStyle: "Stencil Std, fantasy", }}>BUILDING A MOVEMENT TO END HOMELESSNESS</p>
           <DonateCard />
-          <h3>DONATIONS</h3>
-          <DonateForm />
+          <Col>
+            <h3>DONATIONS</h3>
+            <DonateForm />
+          </Col>
+          </Row>
         </Col>
-        </Row>
-
       </Container>
     </div>
 

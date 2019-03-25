@@ -12,10 +12,7 @@ function Volunteer() {
 <Container>
         <Row>
           <Col>
-            <CardBody />
-          </Col>
-          
-          <Col>       
+            <CardBody />      
            <CardBodyTwo />
           </Col>    
           </Row>

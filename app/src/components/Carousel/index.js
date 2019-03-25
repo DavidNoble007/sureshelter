@@ -13,7 +13,7 @@ return (
     <Container>
     <Row>
     
-    <Col sm={12} style={{height: 60, backgroundColor: "#FFEB3B", fontFamily: "Georgia, serif", fontSize: 23, marginBottom: 20}}>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</Col>
+    <Col sm={12} style={{height: 90, backgroundColor: "#FFEB3B", fontFamily: "Georgia, serif", fontSize: 23, marginBottom: 20, marginBottom: 20, padding: 10}}>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</Col>
   </Row>
   </Container>
 <Container className={classes}>
