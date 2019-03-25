@@ -7,7 +7,7 @@ import "./style.css"
 
 function DonateForm(props) {
   return (
-    <Container className="d-Form" {...props}>
+    <Container style={{height:400, padding:20}} className="d-Form" {...props}>
     <Form>
   <Row>
     <Col>
