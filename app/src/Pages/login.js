@@ -1,19 +1,17 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import Modal from "./Modal";
+import { signin } from "../state/auth/actions";
 import { Card, CardHeader, CardContent, CardHeaderTitle } from "react-bootstrap";
-import { signup } from "../../state/auth/actions";
 
-function SignUpModal(props) {
+function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [rePassword, setRePassword] = useState("");
 
   return (
-    <Modal>
+   
       <Card>
         <CardHeader>
-          <CardHeaderTitle>Create an Account!</CardHeaderTitle>
+          <CardHeaderTitle>Login!</CardHeaderTitle>
         </CardHeader>
         <CardContent>
           <div className="field">
@@ -42,48 +40,22 @@ function SignUpModal(props) {
               type="password"
             />
           </div>
-          <div className="field">
-            <label className="label" htmlFor="rePassword">
-              Re Enter Password
-            </label>
-            <input
-              placeholder="Gotta Double Dip"
-              className="input"
-              name="rePassword"
-              value={rePassword}
-              onChange={e => setRePassword(e.target.value)}
-              type="password"
-            />
-          </div>
           <div className="has-text-right">
-            <button onClick={props.closeModal} className="button is-primary">
-              Cancel
-            </button>
             <button
-              onClick={() => {
-                if (password === rePassword) {
-                  console.log("Made it");
-                  props.signup(email, password);
-                }
-              }}
+              onClick={() => props.dispatch(signin(email, password))}
               className="button is-primary"
             >
-              Sign Up
+              Login
             </button>
           </div>
         </CardContent>
       </Card>
-    </Modal>
+  
   );
 }
 
-const mapDispatchToProps = dispatch => ({
-  signup(email, password) {
-    dispatch(signup(email, password))
-  }
-})
 
 export default connect(
-  null,
-  mapDispatchToProps
-)(SignUpModal);
+    null,
+    null
+  )(Login);
