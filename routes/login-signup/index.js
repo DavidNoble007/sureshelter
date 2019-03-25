@@ -32,8 +32,8 @@ router.get("/all-donations", function (req, res) {
 //***** */
 
 router.post("/create-donations", function (req, res) {
-  console.log(req.body);
-  db.Donation.create(req.body).then(dbDonations => {
+  console.log(req.data);
+  db.Donation.create(req.data).then(dbDonations => {
     res.json(dbDonations);
   }).catch(err => res.send(err));
 });
