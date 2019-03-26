@@ -19,14 +19,14 @@ function tokenizer(user) {
   );
 }
 
-router.get("/", function (req, res) {
+router.get("/", function(req, res) {
   res.send("Welcome to the v1 routes!");
 });
 
-router.get("/all-donations", function (req, res) {
+router.get("/all-donations", function(req, res) {
   db.Donation.find().then(dbDonations => {
     res.json(dbDonations);
-  })
+  });
 });
 //gave back an empty array
 
@@ -71,12 +71,16 @@ router.get("/protected", requireAuth, function(req, res){
 });
 //gave back unauthorized
 
-router.post("/signin", requireSignin, function (req, res) {
+router.post("/signin", requireSignin, function(req, res) {
   res.json({ token: tokenizer(req.user) });
 });
 //no such file or directory exists
 
-router.post("/signup", function (req, res) {
+
+
+router.post("/signup",  passport.authenticate('local'),
+function(req, res) {
+ 
   const { email, password } = req.body;
   
 
