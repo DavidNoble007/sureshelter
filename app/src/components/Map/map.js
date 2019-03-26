@@ -7,15 +7,13 @@ class Map extends Component {
   state = {
     pushPins: [],
     center: [],
-    zipcode: ""
+    tableDataResults: []
   };
   handleFormSubmit = () => {
-      console.log(this.state.zipcode)
-      console.log(this.zipcode)
     axios
       .get(
         "https://dev.virtualearth.net/REST/v1/Locations/" +
-          this.state.zipcode +
+          zipcode +
           "?&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
       )
       .then(coordres => {
@@ -39,9 +37,9 @@ class Map extends Component {
             .toString()
             .slice(0, 10);
         // add axios for lat long using zip
-        console.log(coordinates)
 
-        axios.get(
+        axios
+          .get(
             "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=HomelessShelter&userLocation=" +
               coordinates +
               ",160000&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
@@ -49,33 +47,40 @@ class Map extends Component {
           .then(res => {
             console.log(res);
 
+            console.log(res);
+
             var results = res.data.resourceSets[0].resources;
             var resultsArray = [];
+            var tableDataArray = [];
             results.forEach(function(obj) {
               var pushPin = {
                 location: obj.geocodePoints[0].coordinates,
                 option: { color: "blue" }
               };
+              //address etc.
+              var tableDataObject = {
+                shelterName: obj.name,
+                address: obj.Address.formattedAddress,
+                phone: obj.PhoneNumber,
+                website: obj.Website
+              };
               resultsArray.push(pushPin);
+              tableDataArray.push(tableDataObject);
             });
 
-            this.setState({ pushPins: resultsArray });
+            this.setState({
+              pushPins: resultsArray,
+              tableDataResults: tableDataArray
+            });
           });
       })
       .catch(e => console.log(e));
   };
 
-  componentDidMount() {}
-
-  handleInputChange = event => {
-    // Getting the value and name of the input which triggered the change
-    const { zipcode, value } = event.target;
-
-    // Updating the input's state
-    this.setState({
-      zipcode: value
-    });
-  };
+  // // Updating the input's state
+  // this.setState({
+  //   zipcode: value
+  // });
 
   render() {
     return (
@@ -87,16 +92,25 @@ class Map extends Component {
           center={this.state.center}
         />
         <br />
-        <input
-          type="text"
-          name="zipcodesearch"
-          onChange={e => this.handleInputChange(e)}
-        //   value={this.state.zipcode}
-        />
+        <input type="text" value={this.state.value} name="zipcodesearch" />
         <br />
         <button onClick={() => this.handleFormSubmit()}>
           Search by Zip Code
         </button>
+        <table>
+          <tbody>
+            {this.state.tableDataResults.map(shelterInfo => {
+              return (
+                <tr>
+                  {shelterInfo.shelterName}
+                  <td>{shelterInfo.phone}</td>
+                  <td>{shelterInfo.address}</td>
+                  <td>{shelterInfo.website}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
         {/* everything else: table, etc. */}
       </div>
     );
