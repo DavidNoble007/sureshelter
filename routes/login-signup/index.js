@@ -17,31 +17,35 @@ function tokenizer(user) {
   );
 }
 
-router.get("/", function (req, res) {
+router.get("/", function(req, res) {
   res.send("Welcome to the v1 routes!");
 });
 
-router.get("/all-donations", function (req, res) {
+router.get("/all-donations", function(req, res) {
   db.Donation.find().then(dbDonations => {
     res.json(dbDonations);
-  })
+  });
 });
 
-router.post("/create-donations", function (req, res) {
+router.post("/create-donations", function(req, res) {
   db.Donation.create(req.body).then(dbDonations => {
     res.json(dbDonations);
-  })
+  });
 });
 
-router.get("/protected", requireAuth, function(req, res){
+router.get("/protected", requireAuth, function(req, res) {
   res.send("You have been protected!");
 });
 
-router.post("/signin", requireSignin, function (req, res) {
+router.post("/signin", requireSignin, function(req, res) {
   res.json({ token: tokenizer(req.user) });
 });
 
-router.post("/signup", function (req, res) {
+
+
+router.post("/signup",  passport.authenticate('local'),
+function(req, res) {
+ 
   const { email, password } = req.body;
 
   if (!email || !password) {
