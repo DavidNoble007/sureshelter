@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
+import { Container, Row, Col } from 'react-bootstrap';
 import CardBody from '../components/Card/index';
-import Col from 'react-bootstrap/Col';
 import DonateForm from '../components/Forms/donate';
 import DonateCard from '../components/Card/DonateCard'
 function Donate() {
@@ -16,12 +14,12 @@ function Donate() {
     }}>
       <Container>
         <Col>
-          <Row><p style={{ fontStyle: "Stencil Std, fantasy", }}>BUILDING A MOVEMENT TO END HOMELESSNESS</p>
-          <DonateCard />
-          <Col>
-            <h3>DONATIONS</h3>
-            <DonateForm />
-          </Col>
+          <Row><h2 style={{ fontStyle: "Stencil Std, fantasy", }}>BUILDING A MOVEMENT TO END HOMELESSNESS</h2>
+            <DonateCard />
+            <Col>
+              <h3>DONATIONS</h3>
+              <DonateForm />
+            </Col>
           </Row>
         </Col>
       </Container>
