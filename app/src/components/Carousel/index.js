@@ -55,7 +55,7 @@ return (
 </Carousel>
 </Col>
 </Container>
-<Map></Map>
+{/* <Map></Map> */}
 </div>
 
 );
