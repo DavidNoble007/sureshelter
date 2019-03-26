@@ -45,18 +45,31 @@ sureShelter
 
 ## Technology Used
 
+### Passport
+    Allows users to login/register
+
 ### API: Bing
     Utilizing the Bing API to allow users to search for Homeless Shelters in their area.
+
+    80% done with Map
 
 
 ### ReactStrap / NEW /
     CSS framework used to build the application
 
+    WIP
+
 ### nodeMailer / NEW /
     A notification is sent to a specified email when companies sign up for donations.
 
+    100% DONE
+
 ### Mongo/Mongoose for DB
     Stores donations and login information
+
+    STORING DONATIONS
+
+    - Still need login info
 
 # Requirements
 

@@ -7,7 +7,7 @@ function SignUp() {
   return (
     <Container>
       <Col>
-        <h3>LOGIN</h3>
+        <h3>SIGN UP</h3>
         <SignUpForm />
       </Col>
     </Container>
