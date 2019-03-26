@@ -3,6 +3,7 @@ import { ReactBingmaps } from "react-bingmaps";
 import "./style.css";
 import axios from "axios";
 
+var zipcode = 85003
 class Map extends Component {
     state = {
         pushPins: [],

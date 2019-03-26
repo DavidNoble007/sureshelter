@@ -1,47 +1,17 @@
-import React, { useState } from "react";
-// import { connect } from "react-redux";
-// import { signin } from "../state/auth/actions";
-import { Container, Button, Form, Col, Row } from "react-bootstrap";
+import React from "react";
+import { Container, Col } from "react-bootstrap";
+import LoginForm from "../components/Forms/loginForm";
 
-function Login(props) {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
 
+function Login() {
   return (
-    <Container
-      style={{ height: 400, padding: 20 }}
-      className="d-Form"
-      {...props}
-    >
-      <Form>
-        <Col>
-          <Form.Group controlId="formGroupEmail">
-            <Form.Label />
-            <Form.Control type="email" placeholder="Email" />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Form.Control placeholder="Password" />
-        </Col>
-      </Form>
-      <Button variant="primary" type="submit">
-        Login
-      </Button>
+    <Container>
+      <Col>
+        <h3>LOGIN</h3>
+        <LoginForm />
+      </Col>
     </Container>
   );
 }
-
-// export default connect(
-//     null,
-//     null
-//   )(Login);
-
-// function Form({ children }) {
-//   return (
-//     <Form>
-
-//     </Form>
-//   );
-// }
 
 export default Login;
