@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-// Save a reference to the Schema constructor
+// Save a reference to the Schema constructorcd
 var Schema = mongoose.Schema;
 
 var DonationSchema = new Schema({

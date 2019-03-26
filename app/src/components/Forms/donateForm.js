@@ -30,7 +30,7 @@ class DonateForm extends Component {
     event.preventDefault();
 
     axios.post("/create-donations", this.state)
-      .then(function (res) {
+      .then((res) => {
         this.setState({
           firstname: "",
           lastname: "",
@@ -40,10 +40,8 @@ class DonateForm extends Component {
         })
         console.log("made it")
       })
-      
-
-
   };
+
   render() {
     return (
 
@@ -82,7 +80,8 @@ class DonateForm extends Component {
               value={this.state.donationType} name="donationType"
               as="textarea"
               rows="3"
-              onChange={this.handleInputChange} />
+              onChange={this.handleInputChange}
+              placeholder="Enter Donations" />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label></Form.Label>
@@ -90,13 +89,16 @@ class DonateForm extends Component {
               value={this.state.donationAmount} name="donationAmount"
               as="textarea"
               rows="3"
-              onChange={this.handleInputChange} />
+              onChange={this.handleInputChange}
+              placeholder="Enter Donation Quantity" />
           </Form.Group>
         </Form>
         <Button onClick={this.handleFormSubmit} variant="primary" type="submit">
           Submit
         </Button>
       </Container>
+
+
 
 
     );
