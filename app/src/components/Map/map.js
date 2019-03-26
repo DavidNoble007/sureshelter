@@ -1,8 +1,10 @@
-import React, { Component, useState } from "react";
+
+import React, { Component } from "react";
 import { ReactBingmaps } from "react-bingmaps";
 import "./style.css";
 import axios from "axios";
 
+var zipcode = 85048;
 class Map extends Component {
     state = {
         pushPins: [],
@@ -21,13 +23,7 @@ class Map extends Component {
                 var coordinates = coordres.data.resourceSets[0].resources[0].geocodePoints[0].coordinates[0].toString().slice(0, 10) + "," + coordres.data.resourceSets[0].resources[0].geocodePoints[0].coordinates[1].toString().slice(0, 10)
                 // add axios for lat long using zip
 
-        axios.get(
-            "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=HomelessShelter&userLocation=" +
-              coordinates +
-              ",160000&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
-          )
-          .then(res => {
-            console.log(res);
+                axios.get("https://dev.virtualearth.net/REST/v1/LocalSearch/?query=HomelessShelter&userLocation=" + coordinates + ",16000&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8").then(res => {
 
                     console.log(res)
 
@@ -62,13 +58,9 @@ class Map extends Component {
 
     }
 
-    // // Updating the input's state
-    // this.setState({
-    //   zipcode: value
-    // });
-  
+    componentDidMount() {
 
-  
+    }
 
     render() {
         return (
@@ -96,6 +88,6 @@ class Map extends Component {
             </div>
         )
     }
-}
+};
 
 export default Map;
