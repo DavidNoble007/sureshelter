@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
-import CardBody from '../components/Card/index';
+import React from "react";
+import { Container, Row, Col, Jumbotron,} from 'react-bootstrap';
 import DonateForm from '../components/Forms/donateForm';
-import DonateCard from '../components/Card/DonateCard'
+
 function Donate() {
   return (
     <div
@@ -18,22 +17,20 @@ function Donate() {
       }}>;
  <div>
         <Container>
-
-          <Jumbotron />
-          <Row>
-            <h2 style={{ fontStyle: "Stencil Std, fantasy" }}>
+          <Jumbotron style={{height: 750,
+          backgroundImage: "url(" +
+          "https://www.sktthemes.net/wp-content/uploads/2016/10/banner-772x250-1.png" +
+          ")"}}>
+          <h2 style={{ fontStyle: "Stencil Std, fantasy", fontSize:45,  }}>
               BUILDING A MOVEMENT TO END HOMELESSNESS
             </h2>
-          </Row>
-          <Row>
-            <Col>
-              <h3>DONATIONS</h3>
+            <h3 style={{fontSize:52  }}>DONATIONS ACCEPTED!!</h3>
               <DonateForm />
-            </Col>
-          </Row>
+          </Jumbotron>
         </Container>
       </div>
     </div>
+    
 
   );
 }
