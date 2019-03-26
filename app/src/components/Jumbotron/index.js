@@ -1,16 +1,14 @@
-import React from "react";
-import Jumbotron from 'react-bootstrap';
-function Jumbotron({ children }) {
+import React, { Component } from "react";
+import {Jumbotron} from 'react-bootstrap';
+import React, {Component} from "react"
+
+class Jumbotron extends Component {
+  render(){
   return (
-      <Jumbotron>
-    <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Fluid jumbotron</h1>
-    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-  </div>
-</div>
-</Jumbotron>
+    <Jumbotron fluid>
+    <h1>Hello</h1>
+  </Jumbotron>
   );
-}
+}};
 
 export default Jumbotron;
