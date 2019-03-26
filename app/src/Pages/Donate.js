@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import CardBody from '../components/Card/index';
 import DonateForm from '../components/Forms/donate';
 import DonateCard from '../components/Card/DonateCard'
@@ -13,6 +13,7 @@ function Donate() {
       height: 960
     }}>
       <Container>
+      <Jumbotron />
         <Col>
           <Row><h2 style={{ fontStyle: "Stencil Std, fantasy", }}>BUILDING A MOVEMENT TO END HOMELESSNESS</h2>
             <DonateCard />
