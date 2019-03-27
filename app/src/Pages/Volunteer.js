@@ -4,7 +4,7 @@ import { Jumbotron } from "react-bootstrap";
 import Map from "../components/Map/map"
 function Volunteer() {
   return (
-    <div style={{backgroundColor: "#3BFBFF", height:960, backgroundImage: "url(" +
+    <div style={{backgroundColor: "#3BFBFF", height:1200, backgroundImage: "url(" +
     "https://forrecovery.org/wp-content/uploads/2016/06/GiveFFR.jpg"+
     ")", marginTop: -25, padding: 20}}>
 <Container>
