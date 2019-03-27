@@ -3,6 +3,7 @@ import { Carousel, Container } from "react-bootstrap";
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import "./style.css"
+import FactCardOne from "../Card/FactCardOne"
 
 function CarouselBody(props) {
   const { classes } = props;
@@ -47,14 +48,15 @@ function CarouselBody(props) {
                 className="d-block w-100"
                 src="https://i.pinimg.com/originals/c2/25/60/c22560ad6f4d1f630f8fbb16b289e81c.jpg"
               />
-
             </Carousel.Item>
-
-
           </Carousel>
         </Col>
+        <Row className= "factcards">
+        <FactCardOne />
+        </Row>
       </Container>
 
+  
     </div>
 
   );
