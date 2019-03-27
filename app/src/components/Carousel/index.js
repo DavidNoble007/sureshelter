@@ -7,18 +7,22 @@ import "./style.css"
 function CarouselBody(props) {
   const { classes } = props;
   return (
-    <div style={{ height: 150 }}>
+    <div style={{ height: 960,  margin: -24 }}>
       <Row>
-        {/* <Container>
-    <Col sm={12} style={{height: 110, backgroundColor: "#A08AE6", fontFamily: "Georgia, serif", fontSize: 23, marginTop: -24, padding: 10}}>
-    <h2>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</h2></Col>
-    </Container> */}
+       
+    <Col sm={12} style={{height: 140, fontFamily: "Georgia, serif", fontSize: 23, marginTop: -24, padding: 
+    21}}>
+   
+      <Container style={{padding: 24}}><Row><p><em>SureShelter</em> - Gathering and distributing resources to help protect and restore dignity in humanity.</p>
+    </Row>
+    <p><em>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</em></p></Container> </Col>
+   
       </Row>
       <Container className={classes}>
         <Col>
           <Carousel>
             <Carousel.Item>
-              <img style={{ height: 425, }}
+              <img style={{ height: 425, padding: 15 }}
                 className="d-block w-100"
                 src="https://s3-ap-southeast-2.amazonaws.com/arc-vaada/wp-content/uploads/2019/02/21154909/12927-homelessness-is-not-what-0.jpg"
                 alt="First slide"
@@ -49,7 +53,14 @@ function CarouselBody(props) {
               />
 
             </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ height: 425 }}
+                className="d-block w-100"
+                src="https://quotecatalog.imgix.net/posts/rqSg5cyGs4oG.jpg"
+              />
 
+            </Carousel.Item>
 
           </Carousel>
         </Col>

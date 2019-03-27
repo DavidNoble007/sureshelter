@@ -65,10 +65,11 @@ class Map extends Component {
     render() {
         return (
             <div>
+                <input type="text" value={this.state.value} name="zipcodesearch"></input>
+                <button onClick={() => this.handleFormSubmit()}>Search by Zip Code</button>
+                
                 <ReactBingmaps className="searchmap" bingmapKey="AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8" pushPins={this.state.pushPins} center={this.state.center}></ReactBingmaps>
                 <br></br>
-                <input type="text" value={this.state.value} name="zipcodesearch"></input><br></br>
-                <button onClick={() => this.handleFormSubmit()}>Search by Zip Code</button>
                 <table>
                     <tbody>
                         {/* <tr className="tablestuff">

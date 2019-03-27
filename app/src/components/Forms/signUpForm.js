@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Button, Form, Col } from "react-bootstrap";
+import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
 
@@ -34,9 +34,9 @@ class SignUpForm extends Component {
   };
   render() {
     return (
-      <Container style={{ height: 400, padding: 20 }} className="d-Form">
+      <Col className="justify-content-md-center" xs lg="6">
+      <Container style={{ height: 400, padding: 10 }} className="d-Form">
         <Form>
-          <Col>
             <Form.Group controlId="formGroupEmail">
               <Form.Label />
               <Form.Control
@@ -47,28 +47,25 @@ class SignUpForm extends Component {
                 name="email"
               />
             </Form.Group>
-          </Col>
-          <Col>
             <Form.Control
               placeholder="Password"
               onChange={this.handleInputChange}
               value={this.state.password}
               name="password"
             />
-          </Col>
-          <Col>
+          <br></br>
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.password}
               name
             />
-          </Col>
-        </Form>
         <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
           Sign Up!
         </Button>
+        </Form>
       </Container>
+      </Col>
     );
   }
 }
