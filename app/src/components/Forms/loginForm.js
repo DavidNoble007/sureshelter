@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router";
-import { Container, Button, Form, Col } from "react-bootstrap";
+// import { Redirect } from "react-router";
+import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
 
@@ -9,7 +9,7 @@ export default class LoginForm extends Component {
     email: "",
     password: "",
     repassword: "",
-    fireRedirect: false
+    // fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -26,18 +26,27 @@ export default class LoginForm extends Component {
   handleFormSubmit = e => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-
-    axios.post("/signup", this.state).then(res => {
-      this.setState({
-        email: "",
-        password: "",
-        fireRedirect: true
-      });
+    console.log("clicky")
+    axios.post("/signin", this.state).then(res => {
+      console.log(res);
+      if(res.status === 200){
+        //localstorage.set("token" : res.data.token)
+        //Redirect here
+      }else{
+        alert("TRY AGAIN")
+        console.log("WRONG PASSWORD")
+      }
+      // this.setState({
+      //   email: "",
+      //   password: "",
+      //   repassword: "",
+      //   // fireRedirect: true
+      // });
     });
   };
 
   render() {
-    const { fireRedirect } = this.state;
+    // const { fireRedirect } = this.state;
 
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
@@ -73,13 +82,15 @@ export default class LoginForm extends Component {
             />
           </Col>
         </Form>
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={(e)=>this.handleFormSubmit(e)}>
           <Button variant="primary" type="submit">
-            Sign Up!
+            Login!
           </Button>
-        </form>
-        {fireRedirect && <Redirect to={"/"} />}
+          </form>
+        {/* {fireRedirect && <Redirect to={"/"} />} */}
       </Container>
     );
   }
 }
+
+console.log("login successful")
