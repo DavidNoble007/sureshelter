@@ -7,13 +7,12 @@ import "./style.css";
 import axios from "axios";
 // import { Redirect } from 'react-router'
 
-class SignUpForm extends Component {
-
+export default class SignUpForm extends Component {
   state = {
     firstname: "",
     lastname: "",
     email: "",
-    password: "",
+    password: ""
   };
 
   handleInputChange = e => {
@@ -23,17 +22,13 @@ class SignUpForm extends Component {
 
     // Updating the input's state
     this.setState({
-
       [name]: value
-      
     });
   };
 
   handleFormSubmit = e => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault()
-    // ({ fireRedirect: true });
-   
+    e.preventDefault();
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
@@ -44,25 +39,19 @@ class SignUpForm extends Component {
         repassword: "",
         fireRedirect: true
       });
-    
-
-      //if res.status == 200 && token exists
-      // react router redirect
-      // BONUS: set token in local storage
-      //else
-      //alert bad signin
-
       console.log("made it");
     });
   };
-  render()
-   {
-  return (
+  render() {
+    const { fireRedirect } = this.state;
+    return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
-        <Form> <Row>
+        <Form>
+          {" "}
+          <Row>
             <Col>
               <Form.Control
-                value={this.state.firstname} 
+                value={this.state.firstname}
                 name="firstname"
                 onChange={this.handleInputChange}
                 type="text"
@@ -71,11 +60,12 @@ class SignUpForm extends Component {
             </Col>
             <Col>
               <Form.Control
-                value={this.state.lastname} 
+                value={this.state.lastname}
                 name="lastname"
                 onChange={this.handleInputChange}
                 type="text"
-                placeholder="Last name" />
+                placeholder="Last name"
+              />
             </Col>
           </Row>
           <Col>
@@ -104,7 +94,7 @@ class SignUpForm extends Component {
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.password}
-             name
+              name
             />
           </Col>
         </Form>
@@ -115,7 +105,6 @@ class SignUpForm extends Component {
         </form>
         {fireRedirect && <Redirect to={"/"} />}
       </Container>
-
     );
   }
 }
