@@ -3,16 +3,23 @@ import { Carousel, Container } from "react-bootstrap";
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import "./style.css"
+import FactCardOne from "../Card/FactCardOne"
 
 function CarouselBody(props) {
   const { classes } = props;
   return (
-    <div style={{ height: 150 }}>
+    <div style={{ height: 960, margin: -24 }}>
       <Row>
-        {/* <Container>
-    <Col sm={12} style={{height: 110, backgroundColor: "#A08AE6", fontFamily: "Georgia, serif", fontSize: 23, marginTop: -24, padding: 10}}>
-    <h2>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</h2></Col>
-    </Container> */}
+        <Col sm={12} style={{
+          height: 140, fontFamily: "Georgia, serif", fontSize: 23, marginTop: -24 }}>
+          <Container
+            style={{ padding: 24 }}>
+            <Row>
+              <p><em>SureShelter</em>- Gathering and distributing resources to help protect and restore dignity in humanity.</p>
+            </Row>
+            <p><em>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</em></p>
+          </Container>
+        </Col>
       </Row>
       <Container className={classes}>
         <Col>
@@ -47,14 +54,15 @@ function CarouselBody(props) {
                 className="d-block w-100"
                 src="https://i.pinimg.com/originals/c2/25/60/c22560ad6f4d1f630f8fbb16b289e81c.jpg"
               />
-
             </Carousel.Item>
-
-
           </Carousel>
         </Col>
+        <Row className= "factcards">
+        <FactCardOne />
+        </Row>
       </Container>
 
+  
     </div>
 
   );
