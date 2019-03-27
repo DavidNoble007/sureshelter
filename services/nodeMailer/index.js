@@ -1,5 +1,5 @@
 // !! Node Mailer
-// -- Amy
+
 const nodemailer = require("nodemailer");
 // let transporter = nodemailer.createTransport(options[, defaults])
 
@@ -7,7 +7,7 @@ const nodemailer = require("nodemailer");
 //* defaults – is an object that is going to be merged into every message object. This allows you to specify shared options, for example to set the same from address for every message
 
 //!! Back End Node Mailer
-// -- Amy
+
 
 nodemailer.createTransport({
   host: "",
