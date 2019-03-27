@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
-import { Container, Button, Form, Col } from "react-bootstrap";
+import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
-import CarouselBody from "../Carousel/index";
 
 export default class SignUpForm extends Component {
   state = {
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
+    repassword: "",
     fireRedirect: false
   };
 
@@ -33,17 +35,33 @@ export default class SignUpForm extends Component {
         password: "",
         fireRedirect: true
       });
-      console.log("made it");
     });
   };
 
   render() {
-    // const { from } = this.props.location.state || "/";
     const { fireRedirect } = this.state;
 
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
-        <Form>
+        <Form> <Row>
+            <Col>
+              <Form.Control
+                value={this.state.firstname} 
+                name="firstname"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="First name"
+              />
+            </Col>
+            <Col>
+              <Form.Control
+                value={this.state.lastname} 
+                name="lastname"
+                onChange={this.handleInputChange}
+                type="text"
+                placeholder="Last name" />
+            </Col>
+          </Row>
           <Col>
             <Form.Group controlId="formGroupEmail">
               <Form.Label />
@@ -62,14 +80,16 @@ export default class SignUpForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.password}
               name="password"
+              htmlFor="password"
             />
           </Col>
           <Col>
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
-              value={this.state.password}
-              name
+              value={this.state.repassword}
+              name="repassword"
+              htmlFor="password"
             />
           </Col>
         </Form>
