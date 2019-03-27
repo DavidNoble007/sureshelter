@@ -5,22 +5,13 @@ import "./style.css";
 import axios from "axios";
 // import { Redirect } from 'react-router'
 
-<<<<<<< HEAD
 class SignUpForm extends Component {
 
-=======
-export default class SignUpForm extends Component {
->>>>>>> 654d0ebdcf9805b93dbd35e102bf81e431d75701
   state = {
     firstname: "",
     lastname: "",
     email: "",
     password: "",
-<<<<<<< HEAD
-=======
-    repassword: "",
-    fireRedirect: false
->>>>>>> 654d0ebdcf9805b93dbd35e102bf81e431d75701
   };
 
   handleInputChange = e => {
@@ -38,13 +29,9 @@ export default class SignUpForm extends Component {
 
   handleFormSubmit = e => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-<<<<<<< HEAD
     event.preventDefault()
     // ({ fireRedirect: true });
    
-=======
-    e.preventDefault();
->>>>>>> 654d0ebdcf9805b93dbd35e102bf81e431d75701
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
@@ -52,7 +39,6 @@ export default class SignUpForm extends Component {
         password: "",
         fireRedirect: true
       });
-<<<<<<< HEAD
     
 
       //if res.status == 200 && token exists
@@ -67,15 +53,6 @@ export default class SignUpForm extends Component {
   render()
    {
   return (
-=======
-    });
-  };
-
-  render() {
-    const { fireRedirect } = this.state;
-
-    return (
->>>>>>> 654d0ebdcf9805b93dbd35e102bf81e431d75701
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form> <Row>
             <Col>
@@ -121,14 +98,8 @@ export default class SignUpForm extends Component {
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
-<<<<<<< HEAD
               value={this.state.password}
              name
-=======
-              value={this.state.repassword}
-              name="repassword"
-              htmlFor="password"
->>>>>>> 654d0ebdcf9805b93dbd35e102bf81e431d75701
             />
           </Col>
         </Form>
