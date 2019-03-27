@@ -7,7 +7,7 @@ function SignUp() {
   return (
     <Container>
       <Col>
-        <h3>SIGN UP</h3>
+        <h3 style={{padding: 20, color: "#ffffff"}}>SUBSCRIBE TO RECEIVE OUR NEWSLETTER</h3>
         <SignUpForm />
       </Col>
     </Container>

@@ -6,6 +6,7 @@ function Donate() {
   return (
     <div
       style={{
+        margin: -24,
         backgroundImage:
           "url(" +
           "https://media.npr.org/assets/img/2018/01/09/gettyimages-901547744_wide-5be547c0dc69471823fd6808f0f83115a9db22e5-s800-c85.jpg" +

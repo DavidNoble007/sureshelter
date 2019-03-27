@@ -47,27 +47,9 @@ export default class SignUpForm extends Component {
     const { fireRedirect } = this.state;
 
     return (
-      <Container style={{ height: 400, padding: 20 }} className="d-Form">
-        <Form> <Row>
-            <Col>
-              <Form.Control
-                value={this.state.firstname} 
-                name="firstname"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="First name"
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                value={this.state.lastname} 
-                name="lastname"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="Last name" />
-            </Col>
-          </Row>
-          <Col>
+      <Col className="justify-content-md-center" xs lg="6">
+      <Container style={{ height: 400, padding: 10 }} className="d-Form">
+        <Form>
             <Form.Group controlId="formGroupEmail">
               <Form.Label />
               <Form.Control
@@ -78,8 +60,6 @@ export default class SignUpForm extends Component {
                 name="email"
               />
             </Form.Group>
-          </Col>
-          <Col>
             <Form.Control
               placeholder="Password"
               onChange={this.handleInputChange}
@@ -87,8 +67,7 @@ export default class SignUpForm extends Component {
               name="password"
               htmlFor="password"
             />
-          </Col>
-          <Col>
+          <br></br>
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
@@ -96,15 +75,12 @@ export default class SignUpForm extends Component {
               name="repassword"
               htmlFor="password"
             />
-          </Col>
+        <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
+          Sign Up!
+        </Button>
         </Form>
-        <form onSubmit={this.handleFormSubmit}>
-          <Button variant="primary" type="submit">
-            Sign Up!
-          </Button>
-        </form>
-        {fireRedirect && <Redirect to={"/"} />}
       </Container>
+      </Col>
     );
   }
 }

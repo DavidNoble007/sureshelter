@@ -8,10 +8,10 @@ function ButtonAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes}>
-      <Navbar bg="dark" variant="dark"><img
+      <Navbar bg="dark" variant="dark"><img 
         src="https://i.ibb.co/7nm1t6j/d8ca65c3-d6f7-453c-ae19-eda013271331.png"
         width="30"
-        height="30"
+        height="50"
         className="d-inline-block align-top"
         alt="React Bootstrap logo"
       />
