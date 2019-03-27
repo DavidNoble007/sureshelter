@@ -1,9 +1,5 @@
 import React from "react";
 import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import CardBody from '../components/Card/index';
-import Col from 'react-bootstrap/Col'
-import CardBodyTwo from "../components/Card/CardTwo";
 import { Jumbotron } from "react-bootstrap";
 import Map from "../components/Map/map"
 function Volunteer() {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, Form } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 //* Excluding Button, Form & FormControl to prevent errors */
 // import { Navbar, Nav, Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -37,6 +37,7 @@ function ButtonAppBar(props) {
           <Nav.Link href="#login">Login</Nav.Link></Link>
         </Nav>
       </Navbar>
+
     </div>
   );
 }
