@@ -32,6 +32,7 @@
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "react-router-dom": "^5.0.0",
-    "react-slack-chat": "^1.10.2"
+    "react-slack-chat": "^1.10.2",
+    "redirect": "^0.2.0"
   }
 }

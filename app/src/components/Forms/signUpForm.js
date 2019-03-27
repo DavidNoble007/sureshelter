@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { Container, Button, Form, Col } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
+// import { Redirect } from 'react-router'
 
 class SignUpForm extends Component {
+
   state = {
     email: "",
-    password: ""
+    password: "",
   };
 
   handleInputChange = event => {
@@ -16,19 +18,24 @@ class SignUpForm extends Component {
 
     // Updating the input's state
     this.setState({
+
       [name]: value
+      
     });
   };
 
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+    event.preventDefault()
+    // ({ fireRedirect: true });
+   
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
         email: "",
         password: ""
       });
+    
 
       //if res.status == 200 && token exists
       // react router redirect
@@ -39,8 +46,9 @@ class SignUpForm extends Component {
       console.log("made it");
     });
   };
-  render() {
-    return (
+  render()
+   {
+  return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form>
           <Col>
@@ -68,7 +76,7 @@ class SignUpForm extends Component {
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.password}
-              name
+             name
             />
           </Col>
         </Form>
@@ -76,6 +84,7 @@ class SignUpForm extends Component {
           Sign Up!
         </Button>
       </Container>
+
     );
   }
 }
