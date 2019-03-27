@@ -71,13 +71,22 @@ class Map extends Component {
                 <button onClick={() => this.handleFormSubmit()}>Search by Zip Code</button>
                 <table>
                     <tbody>
+                        {/* <tr className="tablestuff">
+                            <td>Shelter</td>
+                            <td>Phone</td>
+                            <td>Address</td>
+                            <td>Website</td>
+                            <br></br><br></br>
+                        </tr> */}
                         {this.state.tableDataResults.map(shelterInfo => {
                             return (
+                                
+                                <tr className="tablestuff">
 
-                                <tr>{shelterInfo.shelterName}
-                                    <td>{shelterInfo.phone}</td>
-                                    <td>{shelterInfo.address}</td>
-                                    <td>{shelterInfo.website}</td>
+                                    <td>  {shelterInfo.shelterName}  </td>
+                                    <td>  {shelterInfo.phone}  </td>
+                                    <td>  {shelterInfo.address}  </td>
+                                    <td>  {shelterInfo.website}  </td>
                                 </tr>
                             )
                         })
