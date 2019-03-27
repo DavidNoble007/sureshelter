@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Jumbotron,} from 'react-bootstrap';
+import { Container, Jumbotron,} from 'react-bootstrap';
 import DonateForm from '../components/Forms/donateForm';
 
 function Donate() {
