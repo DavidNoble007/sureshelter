@@ -1,3 +1,5 @@
+//!! Needs a badge alert to notify the user that they were successfully signed up !!//
+
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
@@ -31,8 +33,11 @@ export default class SignUpForm extends Component {
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
+        firstname: "",
+        lastname: "",
         email: "",
         password: "",
+        repassword: "",
         fireRedirect: true
       });
     });
