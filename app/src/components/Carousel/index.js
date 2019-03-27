@@ -3,6 +3,7 @@ import { Carousel, Container } from "react-bootstrap";
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import "./style.css"
+import FactCardOne from "../Card/FactCardOne"
 
 function CarouselBody(props) {
   const { classes } = props;
@@ -20,53 +21,48 @@ function CarouselBody(props) {
           </Container>
         </Col>
       </Row>
-      <Row>
-        <Container className={classes}>
-          <Col>
-            <Carousel>
-              <Carousel.Item>
-                <img style={{ height: 425, padding: 15 }}
-                  className="d-block w-100"
-                  src="https://s3-ap-southeast-2.amazonaws.com/arc-vaada/wp-content/uploads/2019/02/21154909/12927-homelessness-is-not-what-0.jpg"
-                  alt="First slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img className="d-block w-100"
-                  src="http://nightlightcanada.com/wp-content/uploads/2015/10/homeless-.jpg"
-                  alt="Third slide"
-                />
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  style={{ height: 425 }}
-                  className="d-block w-100"
-                  src="https://media.npr.org/assets/img/2018/05/24/ap_17062505776035_wide-722b10839c0f48bc69b7ed6256e52513ec078d34-s800-c85.jpg"
-                  alt="Third slide"
-                />
+      <Container className={classes}>
+        <Col>
+          <Carousel>
+            <Carousel.Item>
+              <img style={{ height: 425, }}
+                className="d-block w-100"
+                src="https://s3-ap-southeast-2.amazonaws.com/arc-vaada/wp-content/uploads/2019/02/21154909/12927-homelessness-is-not-what-0.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
 
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  style={{ height: 425 }}
-                  className="d-block w-100"
-                  src="https://i.pinimg.com/originals/c2/25/60/c22560ad6f4d1f630f8fbb16b289e81c.jpg"
-                />
+                className="d-block w-100"
+                src="http://nightlightcanada.com/wp-content/uploads/2015/10/homeless-.jpg"
+                alt="Third slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ height: 425 }}
+                className="d-block w-100"
+                src="https://media.npr.org/assets/img/2018/05/24/ap_17062505776035_wide-722b10839c0f48bc69b7ed6256e52513ec078d34-s800-c85.jpg"
+                alt="Third slide"
+              />
 
-              </Carousel.Item>
-              <Carousel.Item>
-                <img
-                  style={{ height: 425 }}
-                  className="d-block w-100"
-                  src="https://quotecatalog.imgix.net/posts/rqSg5cyGs4oG.jpg"
-                />
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                style={{ height: 425 }}
+                className="d-block w-100"
+                src="https://i.pinimg.com/originals/c2/25/60/c22560ad6f4d1f630f8fbb16b289e81c.jpg"
+              />
+            </Carousel.Item>
+          </Carousel>
+        </Col>
+        <Row className= "factcards">
+        <FactCardOne />
+        </Row>
+      </Container>
 
-              </Carousel.Item>
-
-            </Carousel>
-          </Col>
-        </Container>
-      </Row>
+  
     </div>
 
   );
