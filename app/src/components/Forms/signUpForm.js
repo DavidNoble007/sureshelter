@@ -1,18 +1,21 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router";
 import { Container, Button, Form, Col } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
+import CarouselBody from "../Carousel/index";
 
-class SignUpForm extends Component {
+export default class SignUpForm extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
+    fireRedirect: false
   };
 
-  handleInputChange = event => {
+  handleInputChange = e => {
     // Getting the value and name of the input which triggered the change
-    let value = event.target.value;
-    const name = event.target.name;
+    let value = e.target.value;
+    const name = e.target.name;
 
     // Updating the input's state
     this.setState({
@@ -20,19 +23,24 @@ class SignUpForm extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = e => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+    e.preventDefault();
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
         email: "",
-        password: ""
+        password: "",
+        fireRedirect: true
       });
       console.log("made it");
     });
   };
+
   render() {
+    // const { from } = this.props.location.state || "/";
+    const { fireRedirect } = this.state;
+
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form>
@@ -65,12 +73,13 @@ class SignUpForm extends Component {
             />
           </Col>
         </Form>
-        <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
-          Sign Up!
-        </Button>
+        <form onSubmit={this.handleFormSubmit}>
+          <Button variant="primary" type="submit">
+            Sign Up!
+          </Button>
+        </form>
+        {fireRedirect && <Redirect to={"/"} />}
       </Container>
     );
   }
 }
-
-export default SignUpForm;
