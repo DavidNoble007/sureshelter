@@ -5,6 +5,8 @@ const config = require("../../config");
 const passport = require("passport");
 const requireSignin = passport.authenticate("local", { session: false });
 const requireAuth = passport.authenticate("jwt", { session: false });
+const nodemailer = require('nodemailer');
+// const transporter = nodemailer.createTransport(transport);
 
 function tokenizer(user) {
   const timestamp = new Date().getTime();
@@ -17,32 +19,70 @@ function tokenizer(user) {
   );
 }
 
-router.get("/", function (req, res) {
+router.get("/", function(req, res) {
   res.send("Welcome to the v1 routes!");
 });
 
-router.get("/all-donations", function (req, res) {
+router.get("/all-donations", function(req, res) {
   db.Donation.find().then(dbDonations => {
     res.json(dbDonations);
-  })
+  });
 });
+//gave back an empty array
+
+
+//***** */
 
 router.post("/create-donations", function (req, res) {
+  console.log(req.body);
+  //nodemailer send code
+  const transporter = nodemailer.createTransport({
+    service: 'yahoo',
+    auth: {
+      user: 'test12008@yahoo.com',
+      pass: 'root123!'
+    }
+  })
+  const mailOptions = {
+    from: `test12008@yahoo.com`,
+    to: 'test1208@yahoo.com',
+    subject: `Donation`,
+    text: `Thank you for your donation to Sure Shelter. `,
+    replyTo: "test1208@yahoo.com"
+  }
+
+  transporter.sendMail(mailOptions, function(err, res) {
+    if (err) {
+      console.error('there was an error: ', err);
+    } else {
+      console.log('here is the res: ', res)
+    }
+  })
+
   db.Donation.create(req.body).then(dbDonations => {
     res.json(dbDonations);
-  })
+  }).catch(err => res.send(err));
 });
+
+///caused an error/
 
 router.get("/protected", requireAuth, function(req, res){
   res.send("You have been protected!");
 });
+//gave back unauthorized
 
-router.post("/signin", requireSignin, function (req, res) {
+router.post("/signin", requireSignin, function(req, res) {
   res.json({ token: tokenizer(req.user) });
 });
+//no such file or directory exists
 
-router.post("/signup", function (req, res) {
+
+
+router.post("/signup",  passport.authenticate('local'),
+function(req, res) {
+ 
   const { email, password } = req.body;
+  
 
   if (!email || !password) {
     res.status(422).send({ error: "You must provide an email and password" });
@@ -63,6 +103,7 @@ router.post("/signup", function (req, res) {
         res.json({ token: tokenizer(user) });
       });
     })
+    
     .catch(err => {
       return next(err);
     });
