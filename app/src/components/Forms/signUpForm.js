@@ -29,6 +29,13 @@ class SignUpForm extends Component {
         email: "",
         password: ""
       });
+
+      //if res.status == 200 && token exists
+      // react router redirect
+      // BONUS: set token in local storage
+      //else
+      //alert bad signin
+
       console.log("made it");
     });
   };
