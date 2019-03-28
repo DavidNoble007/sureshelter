@@ -9,7 +9,7 @@ function SignUp() {
     <Container>
       <Row>
       <Col>
-        <h3 style={{padding: 20, color: "#ffffff"}}>SUBSCRIBE TO RECEIVE OUR NEWSLETTER</h3>
+        <p style={{padding: 20, textAlign: "center"}}>SUBSCRIBE TO RECEIVE OUR NEWSLETTER</p>
         <SignUpForm />
       </Col>
       <Col>
