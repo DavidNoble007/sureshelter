@@ -8,7 +8,7 @@ export default class LoginForm extends Component {
   state = {
     email: "",
     password: "",
-    repassword: "",
+    repassword: ""
     // fireRedirect: false
   };
 
@@ -26,15 +26,15 @@ export default class LoginForm extends Component {
   handleFormSubmit = e => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
-    console.log("clicky")
+    console.log("clicky");
     axios.post("/signin", this.state).then(res => {
       console.log(res);
-      if(res.status === 200){
+      if (res.status === 200) {
         //localstorage.set("token" : res.data.token)
         //Redirect here
-      }else{
-        alert("TRY AGAIN")
-        console.log("WRONG PASSWORD")
+      } else {
+        alert("TRY AGAIN");
+        console.log("WRONG PASSWORD");
       }
       // this.setState({
       //   email: "",
@@ -82,15 +82,14 @@ export default class LoginForm extends Component {
             />
           </Col>
         </Form>
-        <form onSubmit={(e)=>this.handleFormSubmit(e)}>
+        <form onSubmit={e => this.handleFormSubmit(e)}>
           <Button variant="primary" type="submit">
             Login!
           </Button>
-          </form>
-        {/* {fireRedirect && <Redirect to={"/"} />} */}
+        </form>
       </Container>
     );
   }
 }
 
-console.log("login successful")
+console.log("login successful");
