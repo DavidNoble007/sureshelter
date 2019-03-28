@@ -9,7 +9,7 @@ function CardBodyTwo(props){
   <Card.Img variant="top" src="
 https://thumbs.dreamstime.com/t/happy-volunteer-group-pointing-towards-camera-19391358.jpghttps://dummyimage.com/300/fff/aaahttps://pixabay.com/get/e832b60a2af7083ed1584d05fb1d4e97e07ee3d21cac104490f3c070afefb1bd_340.jpg0" />
   <Card.Body>
-    <Card.Text style={{}}>
+    <Card.Text>
     Volunteers are needed year-round. Because many of us think of giving back during the Fall and Winter holidays, many volunteer programs are quite busy during this time. Think about committing to volunteer once a month all year, or ask your favorite local organization when they might really need the help.
     </Card.Text>
   </Card.Body>
