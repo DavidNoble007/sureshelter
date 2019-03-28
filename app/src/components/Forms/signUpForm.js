@@ -94,15 +94,16 @@ export default class SignUpForm extends Component {
               value={this.state.password}
               name
             />
-
-        <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
-          Sign Up!
-        </Button>
-        {fireRedirect && <Redirect to={"/"} />}
-
-        </Form>
-      </Container>
-
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={this.handleFormSubmit}
+            >
+              Sign Up!
+            </Button>
+          </Form>
+          {fireRedirect && <Redirect to={"/"} />}
+        </Container>
       </Col>
     );
   }
