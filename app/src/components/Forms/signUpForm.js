@@ -40,7 +40,7 @@ export default class SignUpForm extends Component {
         repassword: "",
         fireRedirect: true
       });
-      console.log("made it");
+    
     });
   };
   render() {

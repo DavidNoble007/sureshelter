@@ -9,7 +9,6 @@ export default class LoginForm extends Component {
     email: "",
     password: "",
     repassword: ""
-    // fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -26,27 +25,24 @@ export default class LoginForm extends Component {
   handleFormSubmit = e => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
+
     console.log("clicky");
+
     axios.post("/signin", this.state).then(res => {
+      
       console.log(res);
+      
       if (res.status === 200) {
-        //localstorage.set("token" : res.data.token)
-        //Redirect here
       } else {
         alert("TRY AGAIN");
         console.log("WRONG PASSWORD");
       }
-      // this.setState({
-      //   email: "",
-      //   password: "",
-      //   repassword: "",
-      //   // fireRedirect: true
-      // });
+  
     });
   };
 
   render() {
-    // const { fireRedirect } = this.state;
+   
 
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
