@@ -10,7 +10,7 @@ function FactCardOne(props) {
           <CardDeck>
             <Col>
               <Card bg="dark" text="white" style={{ width: '14rem' }}>
-              <Card.Header>Fact #1</Card.Header>
+              <Card.Header>Fact #1<span class="glyphicon glyphicon-ok"></span></Card.Header>
                 <Card.Text>
                 Over half a million people are homeless.
       </Card.Text>

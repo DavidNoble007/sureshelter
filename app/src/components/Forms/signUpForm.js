@@ -47,7 +47,7 @@ export default class SignUpForm extends Component {
     const { fireRedirect } = this.state;
 
     return (
-      <Col className="justify-content-md-center" xs lg="6">
+      <Col>
       <Container style={{ height: 400, padding: 10 }} className="d-Form">
         <Form>
             <Form.Group controlId="formGroupEmail">
