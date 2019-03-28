@@ -47,8 +47,29 @@ export default class SignUpForm extends Component {
     const { fireRedirect } = this.state;
     return (
       <Col className="justify-content-md-center" xs lg="6">
-      <Container style={{ height: 400, padding: 10 }} className="d-Form">
-        <Form>
+        <Container style={{ height: 400, padding: 10 }} className="d-Form">
+          <Form>
+            {" "}
+            <Row>
+              <Col>
+                <Form.Control
+                  value={this.state.firstname}
+                  name="firstname"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="First name"
+                />
+              </Col>
+              <Col>
+                <Form.Control
+                  value={this.state.lastname}
+                  name="lastname"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="Last name"
+                />
+              </Col>
+            </Row>
             <Form.Group controlId="formGroupEmail">
               <Form.Label />
               <Form.Control
@@ -66,13 +87,14 @@ export default class SignUpForm extends Component {
               name="password"
               htmlFor="password"
             />
-          <br></br>
+            <br />
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.password}
               name
             />
+
         <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
           Sign Up!
         </Button>
@@ -80,6 +102,7 @@ export default class SignUpForm extends Component {
 
         </Form>
       </Container>
+
       </Col>
     );
   }
