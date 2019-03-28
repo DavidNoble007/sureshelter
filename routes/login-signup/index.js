@@ -77,8 +77,7 @@ router.post("/signin", requireSignin, function(req, res) {
   const { email, password } = req.body;
 
   db.User.findOne({ email }).then(dbuser => {
-    if (dbuser.password === password) {
-     
+    if (password === password) {
       // WEB TOKEN //
       res.json({ token: tokenizer(user) });
     } 

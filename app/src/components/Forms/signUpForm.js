@@ -13,7 +13,7 @@ export default class SignUpForm extends Component {
     email: "",
     password: "",
     repassword: "",
-    fireRedirect: false
+        fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -40,12 +40,11 @@ export default class SignUpForm extends Component {
         repassword: "",
         fireRedirect: true
       });
+      console.log("made it");
     });
   };
-
   render() {
     const { fireRedirect } = this.state;
-
     return (
       <Col className="justify-content-md-center" xs lg="6">
         <Container style={{ height: 400, padding: 10 }} className="d-Form">
@@ -92,20 +91,18 @@ export default class SignUpForm extends Component {
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
-              value={this.state.repassword}
-              name="repassword"
-              htmlFor="password"
+              value={this.state.password}
+              name
             />
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={this.handleFormSubmit}
-            >
-              Sign Up!
-            </Button>
-          </Form>
-          {fireRedirect && <Redirect to={"/"} />}
-        </Container>
+
+        <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
+          Sign Up!
+        </Button>
+        {fireRedirect && <Redirect to={"/"} />}
+
+        </Form>
+      </Container>
+
       </Col>
     );
   }
