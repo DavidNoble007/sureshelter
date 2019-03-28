@@ -91,7 +91,7 @@ router.post("/signin", function(req, res) {
     return next(err);
   });
 });
-
+console.log("I AM UPDATED!!!")
 //* SIGN UP *//
 
 router.post("/signup", function(req, res) {
