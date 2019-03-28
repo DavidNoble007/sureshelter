@@ -95,7 +95,7 @@ console.log("I AM UPDATED!!!")
 //* SIGN UP *//
 
 router.post("/signup", function(req, res) {
-  const { email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
 
   if (!email || !password) {
     res.status(422).send({ error: "You must provide an email and password" });
@@ -108,7 +108,7 @@ router.post("/signup", function(req, res) {
         return res.status(422).send({ error: "Email already in use" });
       }
       //create new user object
-      const user = new db.User({ email, password });
+      const user = new db.User({ firstName, lastName, email, password });
       // save the user
       user.save().then(user => {
         console.log(user);
