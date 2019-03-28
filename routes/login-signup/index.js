@@ -72,29 +72,13 @@ router.get("/protected", requireAuth, function(req, res) {
 });
 
 //* LOGIN *//
+
 router.post("/signin", requireSignin, function(req, res) {
-  const { email, password } = req.body;
-  // router.post("/signin", requireSignin, function(req, res) {
-  console.log("HELLO")
-  console.log(email)
-  db.User.findOne({ email : email }).then(dbuser => {
-   if(!dbuser){
-     return res.status(422).send({ error: "Invalid User" });
-   }
+  console.log("/signin");
+  res.json({ token: tokenizer(req.user) });
 
-   dbuser.comparePassword(password, function (err, isMatch) {
-     if(err) return res.send(err);
-     if(isMatch){
-
-     }
-   })
-    
-  })
-  .catch(err => {
-    return next(err);
-  });
 });
-console.log("I AM UPDATED!!!")
+
 //* SIGN UP *//
 
 router.post("/signup", function(req, res) {
