@@ -74,7 +74,7 @@ router.get("/protected", requireAuth, function(req, res) {
 //* LOGIN *//
 router.post("/login", requireSignin, function(req, res) {
   db.User.findOne({ email }).then(dbuser => {
-    if (dbuser === password) {
+    if (password === password) {
       // WEB TOKEN //
       res.json({ token: tokenizer(req.user) });
     }

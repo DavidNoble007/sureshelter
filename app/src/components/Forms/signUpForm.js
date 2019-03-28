@@ -5,14 +5,15 @@ import { Redirect } from "react-router";
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
-// import { Redirect } from 'react-router'
 
 export default class SignUpForm extends Component {
   state = {
     firstname: "",
     lastname: "",
     email: "",
-    password: ""
+    password: "",
+    repassword: "",
+        fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -45,36 +46,9 @@ export default class SignUpForm extends Component {
   render() {
     const { fireRedirect } = this.state;
     return (
-<<<<<<< HEAD
-      <Container style={{ height: 400, padding: 20 }} className="d-Form">
-        <Form>
-          {" "}
-          <Row>
-            <Col>
-              <Form.Control
-                value={this.state.firstname}
-                name="firstname"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="First name"
-              />
-            </Col>
-            <Col>
-              <Form.Control
-                value={this.state.lastname}
-                name="lastname"
-                onChange={this.handleInputChange}
-                type="text"
-                placeholder="Last name"
-              />
-            </Col>
-          </Row>
-          <Col>
-=======
       <Col className="justify-content-md-center" xs lg="6">
       <Container style={{ height: 400, padding: 10 }} className="d-Form">
         <Form>
->>>>>>> 9417e000aa2d4a199e4ea16837e697fc063c1fe8
             <Form.Group controlId="formGroupEmail">
               <Form.Label />
               <Form.Control
@@ -102,6 +76,8 @@ export default class SignUpForm extends Component {
         <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
           Sign Up!
         </Button>
+        {fireRedirect && <Redirect to={"/"} />}
+
         </Form>
       </Container>
       </Col>
