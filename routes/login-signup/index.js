@@ -72,12 +72,16 @@ router.get("/protected", requireAuth, function(req, res) {
 });
 
 //* LOGIN *//
-router.post("/login", requireSignin, function(req, res) {
+
+router.post("/signin", requireSignin, function(req, res) {
+  const { email, password } = req.body;
+
   db.User.findOne({ email }).then(dbuser => {
-    if (dbuser === password) {
+    if (dbuser.password === password) {
+     
       // WEB TOKEN //
-      res.json({ token: tokenizer(req.user) });
-    }
+      res.json({ token: tokenizer(user) });
+    } 
     else {
       res.status(422).send({ error: "Invalid Information" });
     }
