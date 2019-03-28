@@ -8,8 +8,8 @@ import axios from "axios";
 
 export default class SignUpForm extends Component {
   state = {
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     repassword: "",
@@ -33,8 +33,8 @@ export default class SignUpForm extends Component {
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
-        firstname: "",
-        lastname: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         repassword: "",
@@ -54,20 +54,20 @@ export default class SignUpForm extends Component {
             <Row>
               <Col>
                 <Form.Control
-                  value={this.state.firstname}
-                  name="firstname"
+                  value={this.state.firstName}
+                  name="firstName"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="First name"
+                  placeholder="First Name"
                 />
               </Col>
               <Col>
                 <Form.Control
-                  value={this.state.lastname}
-                  name="lastname"
+                  value={this.state.lastName}
+                  name="lastName"
                   onChange={this.handleInputChange}
                   type="text"
-                  placeholder="Last name"
+                  placeholder="Last Name"
                 />
               </Col>
             </Row>
