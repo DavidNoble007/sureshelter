@@ -72,21 +72,26 @@ router.get("/protected", requireAuth, function(req, res) {
 });
 
 //* LOGIN *//
-
-router.post("/signin", requireSignin, function(req, res) {
+router.post("/signin", function(req, res) {
   const { email, password } = req.body;
-
-  db.User.findOne({ email }).then(dbuser => {
-    if (password === password) {
+  // router.post("/signin", requireSignin, function(req, res) {
+  console.log("HELLO")
+  console.log(email)
+  db.User.findOne({ email : email }).then(dbuser => {
+    console.log(dbuser)
+    if (dbuser === password) {
       // WEB TOKEN //
-      res.json({ token: tokenizer(user) });
-    } 
+      res.json({ token: tokenizer(dbuser) });
+    }
     else {
       res.status(422).send({ error: "Invalid Information" });
     }
+  })
+  .catch(err => {
+    return next(err);
   });
 });
-
+console.log("I AM UPDATED!!!")
 //* SIGN UP *//
 
 router.post("/signup", function(req, res) {
