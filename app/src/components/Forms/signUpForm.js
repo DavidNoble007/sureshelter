@@ -8,12 +8,12 @@ import axios from "axios";
 
 export default class SignUpForm extends Component {
   state = {
-    firstname: "",
-    lastname: "",
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     repassword: "",
-    fireRedirect: false
+        fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -33,23 +33,43 @@ export default class SignUpForm extends Component {
 
     axios.post("/signup", this.state).then(res => {
       this.setState({
-        firstname: "",
-        lastname: "",
+        firstName: "",
+        lastName: "",
         email: "",
         password: "",
         repassword: "",
         fireRedirect: true
       });
+      console.log("made it");
     });
   };
-
   render() {
     const { fireRedirect } = this.state;
-
     return (
-      <Col>
-      <Container style={{ height: 400, padding: 10 }} className="d-Form">
-        <Form>
+      <Col className="justify-content-md-center" xs lg="6">
+        <Container style={{ height: 400, padding: 10 }} className="d-Form">
+          <Form>
+            {" "}
+            <Row>
+              <Col>
+                <Form.Control
+                  value={this.state.firstName}
+                  name="firstName"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="First Name"
+                />
+              </Col>
+              <Col>
+                <Form.Control
+                  value={this.state.lastName}
+                  name="lastName"
+                  onChange={this.handleInputChange}
+                  type="text"
+                  placeholder="Last Name"
+                />
+              </Col>
+            </Row>
             <Form.Group controlId="formGroupEmail">
               <Form.Label />
               <Form.Control
@@ -67,19 +87,23 @@ export default class SignUpForm extends Component {
               name="password"
               htmlFor="password"
             />
-          <br></br>
+            <br />
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
-              value={this.state.repassword}
-              name="repassword"
-              htmlFor="password"
+              value={this.state.password}
+              name
             />
-        <Button variant="primary" type="submit" onClick={this.handleFormSubmit}>
-          Sign Up!
-        </Button>
-        </Form>
-      </Container>
+            <Button
+              variant="primary"
+              type="submit"
+              onClick={this.handleFormSubmit}
+            >
+              Sign Up!
+            </Button>
+          </Form>
+          {fireRedirect && <Redirect to={"/"} />}
+        </Container>
       </Col>
     );
   }
