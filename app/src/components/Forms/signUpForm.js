@@ -85,14 +85,18 @@ export default class SignUpForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.password}
               name="password"
-              htmlFor="password"
+              htmlFor="password" type="password"
             />
             <br />
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.repassword}
+<<<<<<< HEAD
               name="repassword"
+=======
+              name="repassword" type="password"
+>>>>>>> 64541b740129a405e288b55829d54efec8169b47
             />
             <Button
               variant="primary"

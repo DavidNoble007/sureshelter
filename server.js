@@ -13,6 +13,7 @@ require("./services/passport");
 
 // Mongoose Connection
 const db = require("./config/connection");
+
 db(process.env.MONGODB_URI || "mongodb://localhost/sureshelter");
 
 // Express Middleware
