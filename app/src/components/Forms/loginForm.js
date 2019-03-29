@@ -31,10 +31,11 @@ export default class LoginForm extends Component {
 
     axios.post("/signin", this.state).then(res => {
       console.log(res);
-      
-      
+
       if (res.status === 200) {
-        this.setState({  fireRedirect: true})
+        this.setState({
+          fireRedirect: true
+        });
       } else {
         alert("TRY AGAIN");
         console.log("WRONG PASSWORD");
