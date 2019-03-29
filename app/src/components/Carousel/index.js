@@ -11,11 +11,11 @@ function CarouselBody(props) {
     <div style={{ height: 960, margin: -24 }}>
       <Row>
         <Col sm={12} style={{
-          height: 140, fontFamily: "Georgia, serif", fontSize: 23, marginTop: -24 }}>
+          height: 140, fontFamily: "Georgia, serif", fontSize: 20, marginTop: -24 }}>
           <Container
             style={{ padding: 24 }}>
             <Row>
-              <p><em>SureShelter</em>- Gathering and distributing resources to help protect and restore dignity in humanity.</p>
+              <p><em><strong style={{fontSize: 30}}>SureShelter</strong></em>- Gathering and distributing resources to help protect and restore dignity in humanity.</p>
             </Row>
             <p><em>“If you know of someone who is homeless; or by chance you are homeless yourself; you are not alone.”― Asa Don Brown</em></p>
           </Container>
