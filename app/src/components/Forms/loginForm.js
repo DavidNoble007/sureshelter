@@ -65,7 +65,7 @@ export default class LoginForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.password}
               name="password"
-              htmlFor="password"
+              htmlFor="password" type="password"
             />
           </Col>
           <Col>
@@ -74,7 +74,7 @@ export default class LoginForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.repassword}
               name="repassword"
-              htmlFor="password"
+              htmlFor="password" type="password"
             />
           </Col>
         </Form>
