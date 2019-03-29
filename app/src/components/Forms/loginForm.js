@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router";
-import { Container, Button, Form, Col } from "react-bootstrap";
+import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
 
@@ -31,10 +31,18 @@ export default class LoginForm extends Component {
 
     axios.post("/signin", this.state).then(res => {
       console.log(res);
+<<<<<<< HEAD
       
       
       if (res.status === 200) {
         this.setState({  fireRedirect: true})
+=======
+
+      if (res.status === 200) {
+        this.setState({
+          fireRedirect: true
+        });
+>>>>>>> d95e38236485f2a10a368198da58d486d1e10738
       } else {
         alert("TRY AGAIN");
         console.log("WRONG PASSWORD");
@@ -69,6 +77,7 @@ export default class LoginForm extends Component {
               type="password"
             />
           </Col>
+          <br />
           <Col>
             <Form.Control
               placeholder="Password x2"
