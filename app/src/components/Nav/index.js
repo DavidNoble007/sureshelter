@@ -29,7 +29,7 @@ function ButtonAppBar(props) {
             <Nav.Link href="#pricing">Donations</Nav.Link>
           </Link>
         </Nav>
-        <Nav pullRight>
+        <Nav pullright="true">
         <Nav className="mr">
           <Link to="/signup">
           <Nav.Link href="#signup">Sign Up</Nav.Link></Link>

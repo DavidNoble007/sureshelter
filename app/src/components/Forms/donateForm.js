@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Container, Button, Form, Col, Row, Modal, Alert } from "react-bootstrap";
+import { Container, Button, Form, Col, Row, Modal } from "react-bootstrap";
 import "./style.css"
 import axios from 'axios';
-const SweetAlert = require('react-bootstrap-sweetalert');
+
 
 // import donations from "../../../../models/donation"
 
@@ -52,7 +52,7 @@ class DonateForm extends Component {
 
     axios.post("/create-donations", this.state)
       .then((res) => {
-      
+
         this.setState({
           firstname: "",
           lastname: "",
@@ -121,8 +121,8 @@ class DonateForm extends Component {
           </Form.Group>
         </Form>
         <Modal show={this.state.show} >
-        <Button variant="primary" onClick={this.handleClose}>
-              Thank you for your Donations!!
+          <Button variant="primary" onClick={this.handleClose}>
+            Thank you for your Donations!!
             </Button>
         </Modal>
         <Button onClick={e => this.handleFormSubmit(e)} variant="primary" type="submit">
@@ -131,7 +131,7 @@ class DonateForm extends Component {
         {/* <Button onClick={this.handleShow} variant="primary" type="submit">
           Submit
         </Button> */}
-         {/* <Modal show={this.state.show} handleClose={this.hideModal}>
+        {/* <Modal show={this.state.show} handleClose={this.hideModal}>
           <p>Modal</p>
           <p>Data</p>
         </Modal> */}

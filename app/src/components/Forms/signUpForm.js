@@ -47,10 +47,10 @@ export default class SignUpForm extends Component {
     const { fireRedirect } = this.state;
     return (
      
-      <Col className="justify-content-md-center" xs lg="10">
-        <Container style={{ height: 300, padding: 30, backgroundColor: "red"}} className="d-Form">
+      <Col className="justify-content-md-center" xs lg="12">
+        <Container style={{ height: 300, padding: 30,}} className="d-Form">
           <Form>
-            {" "}
+         
             <Row>
               <Col>
                 <Form.Control

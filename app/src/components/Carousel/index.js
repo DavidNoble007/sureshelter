@@ -49,10 +49,10 @@ function CarouselBody(props) {
 
             </Carousel.Item>
             <Carousel.Item>
-              <img
-                style={{ height: 425 }}
+              <img style={{ height: 425 }}
                 className="d-block w-100"
                 src="https://i.pinimg.com/originals/c2/25/60/c22560ad6f4d1f630f8fbb16b289e81c.jpg"
+                alt="homeless woman and kid"
               />
             </Carousel.Item>
           </Carousel>
