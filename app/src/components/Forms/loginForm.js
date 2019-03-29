@@ -31,11 +31,18 @@ export default class LoginForm extends Component {
 
     axios.post("/signin", this.state).then(res => {
       console.log(res);
+<<<<<<< HEAD
 
       if (res.status === 200) {
         this.setState({
           fireRedirect: true
         });
+=======
+      
+      
+      if (res.status === 200) {
+        this.setState({  fireRedirect: true})
+>>>>>>> 6845f591bf1592738fd21d13224cc86c3ecc0839
       } else {
         alert("TRY AGAIN");
         console.log("WRONG PASSWORD");
@@ -45,6 +52,10 @@ export default class LoginForm extends Component {
 
   render() {
     const { fireRedirect } = this.state;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6845f591bf1592738fd21d13224cc86c3ecc0839
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form>
@@ -87,6 +98,7 @@ export default class LoginForm extends Component {
           </Button>
           {fireRedirect && <Redirect to={"/donate"} />}
         </form>
+        {fireRedirect && <Redirect to={"/donate"} />}
       </Container>
     );
   }

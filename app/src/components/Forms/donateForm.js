@@ -1,7 +1,16 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
+=======
+import { Container, Button, Form, Col, Row, Modal } from "react-bootstrap";
+import "./style.css"
+import axios from 'axios';
+
+
+// import donations from "../../../../models/donation"
+>>>>>>> 6845f591bf1592738fd21d13224cc86c3ecc0839
 
 class DonateForm extends Component {
   // Setting the component's initial state
@@ -12,6 +21,25 @@ class DonateForm extends Component {
     donationType: "",
     donationAmount: ""
   };
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      show: false,
+    };
+  }
+
+  handleClose = () => {
+    this.setState({ show: false });
+  }
+
+  handleShow = () => {
+    this.setState({ show: true });
+    console.log("running")
+  }
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -36,11 +64,12 @@ class DonateForm extends Component {
         donationType: "",
         donationAmount: ""
       });
-      console.log("made it");
+   
     });
   };
 
   render() {
+
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form>
@@ -97,10 +126,26 @@ class DonateForm extends Component {
             />
           </Form.Group>
         </Form>
-        <Button onClick={this.handleFormSubmit} variant="primary" type="submit">
+        <Modal show={this.state.show} >
+          <Button variant="primary" onClick={this.handleClose}>
+            Thank you for your Donations!!
+            </Button>
+        </Modal>
+        <Button onClick={e => this.handleFormSubmit(e)} variant="primary" type="submit">
           Submit
         </Button>
+        {/* <Button onClick={this.handleShow} variant="primary" type="submit">
+          Submit
+        </Button> */}
+        {/* <Modal show={this.state.show} handleClose={this.hideModal}>
+          <p>Modal</p>
+          <p>Data</p>
+        </Modal> */}
+
       </Container>
+
+
+
     );
   }
 }
