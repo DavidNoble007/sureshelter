@@ -3,7 +3,6 @@ import { ReactBingmaps } from "react-bingmaps";
 import "./style.css";
 import axios from "axios";
 
-
 class Map extends Component {
   state = {
     pushPins: [],
@@ -16,8 +15,8 @@ class Map extends Component {
     axios
       .get(
         "https://dev.virtualearth.net/REST/v1/Locations/" +
-        this.state.zipcode +
-        "?&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
+          this.state.zipcode +
+          "?&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
       )
       .then(coordres => {
         console.log(
@@ -45,8 +44,8 @@ class Map extends Component {
         axios
           .get(
             "https://dev.virtualearth.net/REST/v1/LocalSearch/?query=HomelessShelter&userLocation=" +
-            coordinates +
-            ",16000&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
+              coordinates +
+              ",16000&key=AgEpN8zxdQ1tj8_Zhq8IcNhyvSaEaFdyZ3lEudP0YNMla8W1Q0I9KnXaGdlLAXE8"
           )
           .then(res => {
             console.log(res);
@@ -54,7 +53,7 @@ class Map extends Component {
             var results = res.data.resourceSets[0].resources;
             var resultsArray = [];
             var tableDataArray = [];
-            results.forEach(function (obj) {
+            results.forEach(function(obj) {
               var pushPin = {
                 location: obj.geocodePoints[0].coordinates,
                 option: { color: "blue" }
@@ -80,14 +79,13 @@ class Map extends Component {
   };
 
   handleInputChange = event => {
-
     const { value } = event.target;
 
     this.setState({
       zipcode: value
     });
   };
-  componentDidMount() { }
+  componentDidMount() {}
 
   render() {
     return (
@@ -97,7 +95,6 @@ class Map extends Component {
           type="text"
           name="zipcodesearch"
           onChange={e => this.handleInputChange(e)}
-
         />
         <button onClick={() => this.handleFormSubmit()}>
           Search by Zip Code
@@ -113,13 +110,19 @@ class Map extends Component {
         <table align="center">
           <tbody>
             {this.state.tableDataResults.map(shelterInfo => {
-              var shelterWeb = shelterInfo.website
+              var shelterWeb = shelterInfo.website;
               return (
                 <tr className="tablestuff">
                   <td> {shelterInfo.shelterName} </td>
                   <td> {shelterInfo.phone} </td>
-                  <td>  |-|  {shelterInfo.address} </td>
-                  <td > <a href={shelterWeb} target={shelterWeb}> {shelterWeb} </a> </td>
+                  <td> |-| {shelterInfo.address} </td>
+                  <td>
+                    {" "}
+                    <a href={shelterWeb} target={shelterWeb}>
+                      {" "}
+                      {shelterWeb}{" "}
+                    </a>{" "}
+                  </td>
                 </tr>
               );
             })}

@@ -1,5 +1,3 @@
-//!! Needs a badge alert to notify the user that they were successfully signed up !!//
-
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
@@ -13,7 +11,7 @@ export default class SignUpForm extends Component {
     email: "",
     password: "",
     repassword: "",
-        fireRedirect: false
+    fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -40,7 +38,6 @@ export default class SignUpForm extends Component {
         repassword: "",
         fireRedirect: true
       });
-    
     });
   };
   render() {
@@ -86,14 +83,16 @@ export default class SignUpForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.password}
               name="password"
-              htmlFor="password" type="password"
+              htmlFor="password"
+              type="password"
             />
             <br />
             <Form.Control
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.repassword}
-              name="repassword" type="password"
+              name="repassword"
+              type="password"
             />
             <Button
               variant="primary"

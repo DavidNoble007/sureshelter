@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 8080;
 const nodemailer = require('nodemailer');
 
 // Passport configuration
-// const passport = require("passport");
 require("./services/passport");
 
 // Mongoose Connection
