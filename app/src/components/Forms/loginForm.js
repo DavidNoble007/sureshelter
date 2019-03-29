@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router";
+import { Redirect } from "react-router";
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
@@ -8,7 +8,8 @@ export default class LoginForm extends Component {
   state = {
     email: "",
     password: "",
-    repassword: ""
+    repassword: "",
+    fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -32,7 +33,9 @@ export default class LoginForm extends Component {
       
       console.log(res);
       
+      
       if (res.status === 200) {
+        this.setState({  fireRedirect: true})
       } else {
         alert("TRY AGAIN");
         console.log("WRONG PASSWORD");
@@ -42,7 +45,7 @@ export default class LoginForm extends Component {
   };
 
   render() {
-   
+    const { fireRedirect } = this.state;
 
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
@@ -83,6 +86,7 @@ export default class LoginForm extends Component {
             Login!
           </Button>
         </form>
+        {fireRedirect && <Redirect to={"/donate"} />}
       </Container>
     );
   }
