@@ -1,11 +1,6 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-// import { Redirect } from "react-router";
-import { Container, Button, Form, Col} from "react-bootstrap";
-=======
 import { Redirect } from "react-router";
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
->>>>>>> 32dc19c61cfff989ce5f2f5b169b32b5f83853b4
 import "./style.css";
 import axios from "axios";
 

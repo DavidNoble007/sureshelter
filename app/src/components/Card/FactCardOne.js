@@ -11,14 +11,6 @@ function FactCardOne(props) {
         <Row>
           <CardDeck>
             <Col>
-<<<<<<< HEAD
-              <Card bg="dark" text="white" style={{ width: '14rem' }}>
-              <Card.Header>Fact #1<span class="glyphicon glyphicon-ok"></span></Card.Header>
-                <Card.Text>
-                Over half a million people are homeless.
-      </Card.Text>
-              </Card>
-=======
               <Link className="factCard" to="/volunteer">
                 <Card style={{ width: '14rem' }}>
                   <Link className="factCard" to="/volunteer">
@@ -32,7 +24,6 @@ function FactCardOne(props) {
                   </Card.Body>
                 </Card>
               </Link>
->>>>>>> 32dc19c61cfff989ce5f2f5b169b32b5f83853b4
             </Col>
             <Col>
               <Link className="factCard" to="/donate">
