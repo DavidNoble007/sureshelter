@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Container, Button, Form, Col, Row } from "react-bootstrap";
+import { Container, Button, Form, Col, Row, Modal } from "react-bootstrap";
 import "./style.css"
 import axios from 'axios';
+
+
 // import donations from "../../../../models/donation"
 
 class DonateForm extends Component {
@@ -13,6 +15,25 @@ class DonateForm extends Component {
     donationType: "",
     donationAmount: "",
   };
+  constructor(props, context) {
+    super(props, context);
+
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
+    this.state = {
+      show: false,
+    };
+  }
+
+  handleClose = () => {
+    this.setState({ show: false });
+  }
+
+  handleShow = () => {
+    this.setState({ show: true });
+    console.log("running")
+  }
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -31,6 +52,7 @@ class DonateForm extends Component {
 
     axios.post("/create-donations", this.state)
       .then((res) => {
+
         this.setState({
           firstname: "",
           lastname: "",
@@ -38,11 +60,16 @@ class DonateForm extends Component {
           donationType: "",
           donationAmount: "",
         })
+        this.handleShow(true)
         console.log("made it")
+      })
+      .finally(() => {
+
       })
   };
 
   render() {
+
     return (
 
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
@@ -50,7 +77,7 @@ class DonateForm extends Component {
           <Row>
             <Col>
               <Form.Control
-                value={this.state.firstname} 
+                value={this.state.firstname}
                 name="firstname"
                 onChange={this.handleInputChange}
                 type="text"
@@ -59,7 +86,7 @@ class DonateForm extends Component {
             </Col>
             <Col>
               <Form.Control
-                value={this.state.lastname} 
+                value={this.state.lastname}
                 name="lastname"
                 onChange={this.handleInputChange}
                 type="text"
@@ -93,11 +120,23 @@ class DonateForm extends Component {
               placeholder="Enter Donation Quantity" />
           </Form.Group>
         </Form>
-        <Button onClick={this.handleFormSubmit} variant="primary" type="submit">
+        <Modal show={this.state.show} >
+          <Button variant="primary" onClick={this.handleClose}>
+            Thank you for your Donations!!
+            </Button>
+        </Modal>
+        <Button onClick={e => this.handleFormSubmit(e)} variant="primary" type="submit">
           Submit
         </Button>
-      </Container>
+        {/* <Button onClick={this.handleShow} variant="primary" type="submit">
+          Submit
+        </Button> */}
+        {/* <Modal show={this.state.show} handleClose={this.hideModal}>
+          <p>Modal</p>
+          <p>Data</p>
+        </Modal> */}
 
+      </Container>
 
 
 

@@ -46,10 +46,11 @@ export default class SignUpForm extends Component {
   render() {
     const { fireRedirect } = this.state;
     return (
-      <Col className="justify-content-md-center" xs lg="6">
-        <Container style={{ height: 400, padding: 10 }} className="d-Form">
+     
+      <Col className="justify-content-md-center" xs lg="12">
+        <Container style={{ height: 300, padding: 30,}} className="d-Form">
           <Form>
-            {" "}
+         
             <Row>
               <Col>
                 <Form.Control
@@ -92,11 +93,7 @@ export default class SignUpForm extends Component {
               placeholder="Password x2"
               onChange={this.handleInputChange}
               value={this.state.repassword}
-<<<<<<< HEAD
-              name="repassword"
-=======
               name="repassword" type="password"
->>>>>>> 64541b740129a405e288b55829d54efec8169b47
             />
             <Button
               variant="primary"

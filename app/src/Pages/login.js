@@ -8,7 +8,6 @@ function Login() {
     
     <Container>
       <Col>
-        <h3>LOGIN</h3>
         <LoginForm />
       </Col>
     </Container>
