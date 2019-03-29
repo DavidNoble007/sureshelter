@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 8080;
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 // Passport configuration
 require("./services/passport");
