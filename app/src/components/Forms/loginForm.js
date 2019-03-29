@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-// import { Redirect } from "react-router";
-import { Container, Button, Form, Col, Row } from "react-bootstrap";
+import { Redirect } from "react-router";
+import { Container, Button, Form, Col } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
 
@@ -8,7 +8,8 @@ export default class LoginForm extends Component {
   state = {
     email: "",
     password: "",
-    repassword: ""
+    repassword: "",
+    fireRedirect: false
   };
 
   handleInputChange = e => {
@@ -29,21 +30,21 @@ export default class LoginForm extends Component {
     console.log("clicky");
 
     axios.post("/signin", this.state).then(res => {
-      
       console.log(res);
-      
+
       if (res.status === 200) {
+        this.setState({
+          fireRedirect: true
+        });
       } else {
         alert("TRY AGAIN");
         console.log("WRONG PASSWORD");
       }
-  
     });
   };
 
   render() {
-   
-
+    const { fireRedirect } = this.state;
     return (
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form>
@@ -65,7 +66,8 @@ export default class LoginForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.password}
               name="password"
-              htmlFor="password" type="password"
+              htmlFor="password"
+              type="password"
             />
           </Col>
           <Col>
@@ -74,7 +76,8 @@ export default class LoginForm extends Component {
               onChange={this.handleInputChange}
               value={this.state.repassword}
               name="repassword"
-              htmlFor="password" type="password"
+              htmlFor="password"
+              type="password"
             />
           </Col>
         </Form>
@@ -82,6 +85,7 @@ export default class LoginForm extends Component {
           <Button variant="primary" type="submit">
             Login!
           </Button>
+          {fireRedirect && <Redirect to={"/donate"} />}
         </form>
       </Container>
     );

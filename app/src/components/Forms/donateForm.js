@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
-import "./style.css"
-import axios from 'axios';
-// import donations from "../../../../models/donation"
+import "./style.css";
+import axios from "axios";
 
 class DonateForm extends Component {
   // Setting the component's initial state
@@ -11,7 +10,7 @@ class DonateForm extends Component {
     lastname: "",
     email: "",
     donationType: "",
-    donationAmount: "",
+    donationAmount: ""
   };
 
   handleInputChange = event => {
@@ -29,28 +28,26 @@ class DonateForm extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    axios.post("/create-donations", this.state)
-      .then((res) => {
-        this.setState({
-          firstname: "",
-          lastname: "",
-          email: "",
-          donationType: "",
-          donationAmount: "",
-        })
-        console.log("made it")
-      })
+    axios.post("/create-donations", this.state).then(res => {
+      this.setState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        donationType: "",
+        donationAmount: ""
+      });
+      console.log("made it");
+    });
   };
 
   render() {
     return (
-
       <Container style={{ height: 400, padding: 20 }} className="d-Form">
         <Form>
           <Row>
             <Col>
               <Form.Control
-                value={this.state.firstname} 
+                value={this.state.firstname}
                 name="firstname"
                 onChange={this.handleInputChange}
                 type="text"
@@ -59,49 +56,52 @@ class DonateForm extends Component {
             </Col>
             <Col>
               <Form.Control
-                value={this.state.lastname} 
+                value={this.state.lastname}
                 name="lastname"
                 onChange={this.handleInputChange}
                 type="text"
-                placeholder="Last name" />
+                placeholder="Last name"
+              />
             </Col>
           </Row>
           <Form.Group controlId="formGroupEmail">
-            <Form.Label></Form.Label>
-            <Form.Control value={this.state.email}
+            <Form.Label />
+            <Form.Control
+              value={this.state.email}
               onChange={this.handleInputChange}
               type="email"
               name="email"
-              placeholder="Enter email" />
+              placeholder="Enter email"
+            />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label></Form.Label>
+            <Form.Label />
             <Form.Control
-              value={this.state.donationType} name="donationType"
+              value={this.state.donationType}
+              name="donationType"
               as="textarea"
               rows="3"
               onChange={this.handleInputChange}
-              placeholder="Enter Donations" />
+              placeholder="Enter Donations"
+            />
           </Form.Group>
           <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label></Form.Label>
+            <Form.Label />
             <Form.Control
-              value={this.state.donationAmount} name="donationAmount"
+              value={this.state.donationAmount}
+              name="donationAmount"
               as="textarea"
               rows="3"
               onChange={this.handleInputChange}
-              placeholder="Enter Donation Quantity" />
+              placeholder="Enter Donation Quantity"
+            />
           </Form.Group>
         </Form>
         <Button onClick={this.handleFormSubmit} variant="primary" type="submit">
           Submit
         </Button>
       </Container>
-
-
-
-
     );
-  };
-};
+  }
+}
 export default DonateForm;
