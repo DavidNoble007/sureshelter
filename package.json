@@ -41,6 +41,7 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
+    "react-bootstrap-sweetalert": "^4.4.1",
     "react-router-dom": "^5.0.0",
     "react-slack-chat": "^1.10.2",
     "redirect": "^0.2.0"
