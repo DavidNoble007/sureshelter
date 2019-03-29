@@ -1,16 +1,7 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
 import { Container, Button, Form, Col, Row } from "react-bootstrap";
 import "./style.css";
 import axios from "axios";
-=======
-import { Container, Button, Form, Col, Row, Modal } from "react-bootstrap";
-import "./style.css"
-import axios from 'axios';
-
-
-// import donations from "../../../../models/donation"
->>>>>>> 6845f591bf1592738fd21d13224cc86c3ecc0839
 
 class DonateForm extends Component {
   // Setting the component's initial state
@@ -126,11 +117,11 @@ class DonateForm extends Component {
             />
           </Form.Group>
         </Form>
-        <Modal show={this.state.show} >
+        {/* <Modal show={this.state.show} >
           <Button variant="primary" onClick={this.handleClose}>
             Thank you for your Donations!!
             </Button>
-        </Modal>
+        </Modal> */}
         <Button onClick={e => this.handleFormSubmit(e)} variant="primary" type="submit">
           Submit
         </Button>
