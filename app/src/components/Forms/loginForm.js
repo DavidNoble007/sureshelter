@@ -29,7 +29,7 @@ export default class LoginForm extends Component {
 
     console.log("clicky");
 
-    axios.post("/signin", this.state).then(res => {
+    axios.post("/v1/signin", this.state).then(res => {
       console.log(res);
 
       if (res.status === 200) {
