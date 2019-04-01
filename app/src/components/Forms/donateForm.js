@@ -1,16 +1,9 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import { Container, Button, Form, Col, Row } from "react-bootstrap";
-import "./style.css";
-import axios from "axios";
-=======
 import { Container, Button, Form, Col, Row, Modal } from "react-bootstrap";
 import "./style.css"
 import axios from 'axios';
 
-
 // import donations from "../../../../models/donation"
->>>>>>> d95e38236485f2a10a368198da58d486d1e10738
 
 class DonateForm extends Component {
   // Setting the component's initial state
