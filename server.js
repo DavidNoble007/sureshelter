@@ -18,7 +18,7 @@ app.use(require("morgan")("dev"));
 // Serve Static
 app.use(express.static("app/build"));
 
-app.use(require("./routes/login-signup/index"));
+app.use(require("./routes/index"));
 
 // Mongoose Connection
 const db = require("./config/connection");
