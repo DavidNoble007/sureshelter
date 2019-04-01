@@ -1,6 +1,8 @@
 {
   "name": "shelterfind",
   "version": "1.0.0",
+  "engines":{
+    "node": "10.15.0"},
   "description": "### Authors     David Noble     Amy Smith     Yasiin Muhammad     Clarissa Rivas",
   "main": "server.js",
   "scripts": {
