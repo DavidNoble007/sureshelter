@@ -49,9 +49,9 @@ class DonateForm extends Component {
 
   handleFormSubmit = event => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
-    event.preventDefault();
+    event.preventDefault(); 
 
-    axios.post("/create-donations", this.state)
+    axios.post("/v1/create-donations", this.state)
       .then((res) => {
 
         this.setState({

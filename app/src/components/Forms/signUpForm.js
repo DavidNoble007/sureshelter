@@ -29,7 +29,7 @@ export default class SignUpForm extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     e.preventDefault();
 
-    axios.post("/signup", this.state).then(res => {
+    axios.post("/v1/signup", this.state).then(res => {
       this.setState({
         firstName: "",
         lastName: "",
