@@ -10,22 +10,22 @@ const nodemailer = require("nodemailer");
 // Passport configuration
 require("./services/passport");
 
-// Serve Static
-app.use(express.static("app/build"));
-
 // Express Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(require("morgan")("dev"));
 
-app.use(require("./routes/login-signup/index"));
+// Serve Static
+app.use(express.static("app/build"));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
-// });
+app.use(require("./routes/login-signup/index"));
 
 // Mongoose Connection
 const db = require("./config/connection");
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
+});
 
 db(process.env.MONGODB_URI || "mongodb://localhost/sureshelter");
 
