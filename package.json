@@ -12,8 +12,7 @@
     "client": "cd app && yarn start",
     "seed": "node scripts/seedDB.js",
     "install": "cd app && yarn",
-    "build": "cd app && yarn build",
-    "heroku-postbuild": "yarn build"
+    "build": "cd app && yarn build"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
