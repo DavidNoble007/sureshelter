@@ -4,7 +4,6 @@ import { Container, Button, Form, Col, Row, Modal } from "react-bootstrap";
 import "./style.css"
 import axios from 'axios';
 
-
 // import donations from "../../../../models/donation"
 
 class DonateForm extends Component {
