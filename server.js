@@ -20,9 +20,9 @@ app.use(require("morgan")("dev"));
 
 app.use(require("./routes/login-signup/index"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
+// });
 
 // Mongoose Connection
 const db = require("./config/connection");
